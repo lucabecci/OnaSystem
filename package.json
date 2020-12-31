@@ -1,0 +1,15 @@
+{
+  "name": "onasystem",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "author": "Luca Becci",
+  "devDependencies": {
+    "lerna": "^3.22.1"
+  },
+  "scripts": {
+    "test": "lerna run test --scope={@walnut/common,@walnut/server}",
+    "new-version": "lerna version --conventional-commits --yes",
+    "diff": "lerna diff"
+  }
+}
