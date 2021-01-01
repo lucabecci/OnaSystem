@@ -1,4 +1,8 @@
 {
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
   "name": "onasystem",
   "version": "1.0.0",
   "main": "index.js",
