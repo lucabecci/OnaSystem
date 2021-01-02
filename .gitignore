@@ -1,6 +1,6 @@
 
-# Created by https://www.toptal.com/developers/gitignore/api/linux,git,vscode,node,yarn
-# Edit at https://www.toptal.com/developers/gitignore?templates=linux,git,vscode,node,yarn
+# Created by https://www.toptal.com/developers/gitignore/api/linux,vscode,git,yarn,node
+# Edit at https://www.toptal.com/developers/gitignore?templates=linux,vscode,git,yarn,node
 
 ### Git ###
 # Created by git for backups. To disable backups in Git:
@@ -145,6 +145,9 @@ dist
 
 ### vscode ###
 .vscode/*
+.vscode
+.vscode
+.vscode
 !.vscode/settings.json
 !.vscode/tasks.json
 !.vscode/launch.json
@@ -167,4 +170,4 @@ dist
 # and uncomment the following lines
 # .pnp.*
 
-# End of https://www.toptal.com/developers/gitignore/api/linux,git,vscode,node,yarn
+# End of https://www.toptal.com/developers/gitignore/api/linux,vscode,git,yarn,node

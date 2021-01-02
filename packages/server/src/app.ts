@@ -4,16 +4,19 @@ import config, { iConfig } from './config/config'
 
 import Database from './database/database'
 import IndexRouter from './routes/index.routes'
+import UserRouter from './routes/user.routes'
 class App {
     private _app: Application
     public _config: iConfig
     private _database: Database
     private _indexRouter: IndexRouter
+    private _userRouter: UserRouter
     constructor(){
         this._app = express()
         this._config = config
         this._database = new Database(this._config.MONGO_URI)
         this._indexRouter = new IndexRouter
+        this._userRouter = new UserRouter
 
         this.initDatabase()
         this.initConfig()
@@ -31,6 +34,7 @@ class App {
 
     private initRoutes(): void{
         this._app.use('/', this._indexRouter._router)
+        this._app.use('/user', this._userRouter._router)
     }
 
     public run(): void{

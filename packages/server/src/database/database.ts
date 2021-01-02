@@ -11,7 +11,8 @@ class Database {
     this._dbconfiguration = {
       useNewUrlParser: true,
       useUnifiedTopology: true,
-      useFindAndModify: false
+      useFindAndModify: false,
+      useCreateIndex: true
     };
     this._db_uri = db_uri
   }
