@@ -15,8 +15,17 @@ class IpRouter {
     }
 
     private initRoutes(){
+        this._router.post(
+            '/saveSearch', 
+            passport.authenticate("jwt", {session: false}), 
+            this._ipController.newSearch
+        )
+
         this._router.get(
-        '/', passport.authenticate("jwt", {session: false}), this._ipController.test)
+            '/Searchs', 
+            passport.authenticate("jwt", {session: false}), 
+            this._ipController.getSearchs
+        )
     }
 }
 

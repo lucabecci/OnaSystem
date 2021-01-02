@@ -1,4 +1,5 @@
 import { IRouter, Router } from "express";
+import passport from "passport";
 import UserController from "../controllers/user.controller";
 
 class UserRouter {
@@ -13,6 +14,11 @@ class UserRouter {
     private initRoutes(): void{
         this._router.post('/register', this._userController.register)
         this._router.post('/login', this._userController.login)
+        this._router.get(
+            '/tokenIsValid', 
+            passport.authenticate("jwt", {session: false}),
+            this._userController.tokenIsValid
+        )
     }
 }
 

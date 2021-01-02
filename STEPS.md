@@ -4,26 +4,28 @@
 
 ## Backend Steps:
 
-# Create Server
+ Create Server
 
-# Configure the app
+ Configure the app
 
-# Initialiacize routes and controllers
+ Initialiacize routes and controllers
 
-# Config the enviroments and variables of my app
+ Config the enviroments and variables of my app
 
-# Create the connection of my database
+ Create the connection of my database
 
-# Configure all properties of my database
+ Configure all properties of my database
 
-# Use the recursion in my database
+ Use the recursion in my database
 
-# Create the user, account, speed_history, ip_history models
+ Create the user, account, speed_history, ip_history models
 
-# Create the user controller and router
+ Create the user controller and router
 
-# Create the login and register for the user
+ Create the login and register for the user
 
+ Add passport and configurate this
+ 
 # Create the logic of get IP endpoint of the user
 
 # Create the logic for save IP searched and IP used

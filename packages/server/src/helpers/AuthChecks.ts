@@ -42,7 +42,7 @@ export function LoginCampsCheck(
 export function EqualPasswords (
     password: string,
     passwordCheck: string
-){
+): boolean{
     if(password !== passwordCheck){
         return true
     }

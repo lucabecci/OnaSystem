@@ -12,7 +12,7 @@ export interface IUser extends Document{
 
 class UserSchema {
     private _schemaDefinition : SchemaDefinition
-    _userSchema: Schema;
+    public _userSchema: Schema;
 
     constructor() {
         this._schemaDefinition = {

@@ -1,6 +1,6 @@
 import {Response, Request} from 'express'
 import bcrypt from 'bcrypt'
-import { EqualPasswords, LoginCampsCheck, RegisterCampsCheck } from '../helpers/Checks'
+import { EqualPasswords, LoginCampsCheck, RegisterCampsCheck } from '../helpers/AuthChecks'
 import User from '../models/User.schema'
 import { createToken } from '../helpers/CreateToken'
 class UserController{
@@ -120,6 +120,16 @@ class UserController{
                 email: user.email
             }
         })
+    }
+
+    public tokenIsValid(_req: Request, res:Response): Response{
+        try{
+            return res.json(true)
+        }
+        catch(e){
+            console.log(e)
+            return res.json(false)
+        }
     }
 }
 
