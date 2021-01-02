@@ -25,6 +25,20 @@ export function RegisterCampsCheck(
 }
 
 
+export function LoginCampsCheck(
+    email: string,
+    password: string
+): boolean {
+    if(
+        email == null ||
+        password == null 
+    ){
+        return true
+    }
+
+    return false
+}
+
 export function EqualPasswords (
     password: string,
     passwordCheck: string

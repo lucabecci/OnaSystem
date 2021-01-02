@@ -1,6 +1,8 @@
 import {Response, Request} from 'express'
-import { EqualPasswords, RegisterCampsCheck } from '../helpers/Checks'
+import bcrypt from 'bcrypt'
+import { EqualPasswords, LoginCampsCheck, RegisterCampsCheck } from '../helpers/Checks'
 import User from '../models/User.schema'
+import { createToken } from '../helpers/createToken'
 class UserController{
     public async register(req: Request, res: Response): Promise<Response> {
         const newUser = {
@@ -75,6 +77,49 @@ class UserController{
         }
 
         
+    }
+
+    public async login(req: Request, res: Response): Promise<Response> {
+        const userLogged = {
+            email: req.body.email,
+            password: req.body.password
+        }
+
+        const campsChecked = LoginCampsCheck(userLogged.email, userLogged.password)
+
+        if(campsChecked) return res.status(400).json({
+            ok: false,
+            message: 'Please send all camps'
+        })
+
+        const user = await User.findOne({email: userLogged.email})
+
+        if(!user) return res.status(200).json({
+            ok: false,
+            message: 'Email doesnt exists in this application'
+        })
+        
+
+        const passwordCompared = await bcrypt.compare(userLogged.password, user.password)
+
+        if(!passwordCompared){
+            return res.status(400).json({
+                ok: false,
+                message: 'Passwords not equal'
+            })
+        }
+
+        const token = await createToken(user._id)
+
+        return res.status(200).json({
+            ok: true,
+            token,
+            user:{
+                id: user._id,
+                userName: user.userName,
+                email: user.email
+            }
+        })
     }
 }
 
