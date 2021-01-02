@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.5.0](https://github.com/lucabecci/OnaSystem/compare/v1.4.0...v1.5.0) (2021-01-02)
+
+
+### Features
+
+* **@server:** auth middleware and types added ([e1abc67](https://github.com/lucabecci/OnaSystem/commit/e1abc6773e8be30e4f03a230a936fe1ac773ad91))
+
+
+
+
+
 # [1.4.0](https://github.com/lucabecci/OnaSystem/compare/v1.3.0...v1.4.0) (2021-01-02)
 
 
