@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.6.1](https://github.com/lucabecci/OnaSystem/compare/v1.6.0...v1.6.1) (2021-01-02)
+
+
+### Bug Fixes
+
+* **@server:** eslint and prettier added and configurated ([086b3d2](https://github.com/lucabecci/OnaSystem/commit/086b3d2ebe30b3c9ef95e22cf657a7aa33655ec2))
+
+
+
+
+
 # [1.6.0](https://github.com/lucabecci/OnaSystem/compare/v1.5.0...v1.6.0) (2021-01-02)
 
 
