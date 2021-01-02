@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.4.0](https://github.com/lucabecci/OnaSystem/compare/v1.3.0...v1.4.0) (2021-01-02)
+
+
+### Features
+
+* **@server:** login and helper of createToken added ([367d9e9](https://github.com/lucabecci/OnaSystem/commit/367d9e9eee489eed41c848feb1b36e9804ba6f37))
+
+
+
+
+
 # [1.3.0](https://github.com/lucabecci/OnaSystem/compare/v1.2.0...v1.3.0) (2021-01-02)
 
 
