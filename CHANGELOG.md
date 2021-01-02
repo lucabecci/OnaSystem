@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.3.0](https://github.com/lucabecci/OnaSystem/compare/v1.2.0...v1.3.0) (2021-01-02)
+
+
+### Features
+
+* **@server:** register and user model added ([587b1d6](https://github.com/lucabecci/OnaSystem/commit/587b1d638ab631daf2c2e37f486b1aa9b3565f98))
+
+
+
+
+
 # [1.2.0](https://github.com/lucabecci/OnaSystem/compare/v1.1.0...v1.2.0) (2021-01-01)
 
 
