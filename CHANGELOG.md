@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.6.0](https://github.com/lucabecci/OnaSystem/compare/v1.5.0...v1.6.0) (2021-01-02)
+
+
+### Features
+
+* **@server:** passport auth added ([a8d3843](https://github.com/lucabecci/OnaSystem/commit/a8d38438c7bac8c75cb42897acf7031ddd106c3f))
+
+
+
+
+
 # [1.5.0](https://github.com/lucabecci/OnaSystem/compare/v1.4.0...v1.5.0) (2021-01-02)
 
 
