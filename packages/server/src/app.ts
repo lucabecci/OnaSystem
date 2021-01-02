@@ -1,11 +1,15 @@
 import express, {Application} from 'express'
 import morgan from 'morgan'
-import config, { iConfig } from './config/config'
+import cors from 'cors'
+import helmet from 'helmet'
+import passport from 'passport'
 
+import config, { iConfig } from './config/config'
 import Database from './database/database'
 import IndexRouter from './routes/index.routes'
 import IpRouter from './routes/ip.routes'
 import UserRouter from './routes/user.routes'
+import passportAuth from './middlewares/Auth'
 class App {
     private _app: Application
     public _config: iConfig
@@ -30,9 +34,14 @@ class App {
     }
 
     private initConfig(): void{
+        this._app.use(cors())
+        this._app.use(helmet())
         this._app.use(express.json())
         this._app.use(express.urlencoded({extended: false}))
         this._app.use(morgan(this._config.MORGAN_WORKING))
+
+        this._app.use(passport.initialize())
+        passport.use(passportAuth)
     }
 
     private initRoutes(): void{

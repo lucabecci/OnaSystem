@@ -1,6 +1,6 @@
 import { IRouter, Router } from "express";
+import passport from "passport";
 import IpController from "../controllers/ip.controller";
-import authenticated from "../middlewares/Auth";
 
 class IpRouter {
     public _router: IRouter
@@ -15,7 +15,8 @@ class IpRouter {
     }
 
     private initRoutes(){
-        this._router.get('/', authenticated, this._ipController.test)
+        this._router.get(
+        '/', passport.authenticate("jwt", {session: false}), this._ipController.test)
     }
 }
 

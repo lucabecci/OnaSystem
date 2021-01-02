@@ -1,40 +1,36 @@
-import jwt from 'jsonwebtoken'
-import {NextFunction} from 'express'
-import {MyRequest, MyResponse} from '../types/Types'
+import {Strategy, ExtractJwt, StrategyOptions} from 'passport-jwt'
+import config from '../config/config'
+import User from '../models/User.schema'
 
-const authenticated = (
-    req: MyRequest, 
-    res: MyResponse, 
-    next: NextFunction): any => {
-    try{
-        const token = req.header("x-auth-token")
 
-        if(!token){
-            return res.status(400).json({
-                ok: false,
-                message: 'Not authentication token, authetication denied'
-            })
+class Auth {
+    private _options: StrategyOptions
+    public _strategy: Strategy
+
+    constructor(){
+        this._options = {
+            jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
+            secretOrKey: config.JWT_TOKEN
         }
 
-        const verified: any = jwt.verify(token, process.env.JWT_TOKEN!)
+        this._strategy = new Strategy(this._options, async(payload, done) => {
+            try{
+                const user = await User.findById(payload.id)
 
-        if(!verified){
-            return res.status(400).json({
-                ok: false,
-                message: 'Token verification failed, authentication denied'
-            })
-        }
-
-        req.user = verified.id!
-        next()
-    }
-
-    catch(e){
-        return res.status(500).json({
-            ok: false,
-            message: 'Internal server error'
-        })
+                if(user) {
+                    return done(null, user._id)
+                }
+                return done(null, false)
+            }
+            catch(e){
+                console.log(e)
+                return false
+            }
+        } )
     }
 }
 
-export default authenticated
+const passportStrategy = new Auth
+
+
+export default passportStrategy._strategy
