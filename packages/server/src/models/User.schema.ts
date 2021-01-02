@@ -69,6 +69,7 @@ class UserSchema {
 
     private encryptPassword() {
         this._userSchema.pre<IUser>("save", async function(next) {
+            // eslint-disable-next-line @typescript-eslint/no-this-alias
             const user = this
             if(!user.isModified("password")) return next()
             const salt = await bcrypt.genSalt(12)
