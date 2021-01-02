@@ -2,7 +2,7 @@ import {Response, Request} from 'express'
 import bcrypt from 'bcrypt'
 import { EqualPasswords, LoginCampsCheck, RegisterCampsCheck } from '../helpers/Checks'
 import User from '../models/User.schema'
-import { createToken } from '../helpers/createToken'
+import { createToken } from '../helpers/CreateToken'
 class UserController{
     public async register(req: Request, res: Response): Promise<Response> {
         const newUser = {
