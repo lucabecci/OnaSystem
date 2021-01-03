@@ -10,11 +10,11 @@ class IpRouter {
         this._router = Router()
         this._ipController = new IpController
 
-
         this.initRoutes()
     }
 
     private initRoutes(){
+
         this._router.post(
             '/saveSearch', 
             passport.authenticate("jwt", {session: false}), 
@@ -22,10 +22,23 @@ class IpRouter {
         )
 
         this._router.get(
-            '/Searchs', 
+            '/searchs', 
             passport.authenticate("jwt", {session: false}), 
             this._ipController.getSearchs
         )
+
+        this._router.get(
+            '/search/:id', 
+            passport.authenticate("jwt", {session: false}), 
+            this._ipController.getSearch
+        )
+
+        this._router.delete(
+            '/delete/:id',
+            passport.authenticate("jwt", {session: false}), 
+            this._ipController.deleteSearch
+        )
+    
     }
 }
 

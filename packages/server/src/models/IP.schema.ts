@@ -1,7 +1,7 @@
 import {Schema, model, Document, SchemaDefinition} from 'mongoose'
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
-export interface IIpSchema extends Document {
+export interface IIp extends Document {
     _id?: string
     ip: string,
     country: string
@@ -63,4 +63,4 @@ class IpSchema {
 
 const ipSchema = new IpSchema
 
-export default model<IIpSchema>('Ip', ipSchema._ipSchema)
+export default model<IIp>('Ip', ipSchema._ipSchema)

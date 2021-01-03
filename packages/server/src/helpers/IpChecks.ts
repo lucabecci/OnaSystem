@@ -23,3 +23,11 @@ export function SaveIpCheckCamps(
 
     return false
 }
+
+
+export function IdExists(id: string): boolean{
+    if(id){
+        return false
+    }
+    return true
+}
