@@ -26,17 +26,17 @@
 
  Add passport and configurate this
  
-# Create the logic of get IP endpoint of the user
+ Create the logic of get IP endpoint of the user
 
-# Create the logic for save IP searched and IP used
+ Create the logic for save IP searched and IP used
 
-# Create the logic for save teh speed in the day of the user
+ Create the logic for save the speed in the day of the user
 
-# Create the middlewar of the authetication in the protected routes
+ Create the middleware of the authetication in the protected routes
 
 # Create the admin routes and controller
 
-# Protect all routes of the user with the auth middleware
+ Protect all routes of the user with the auth middleware
 
 # Protect the admin routes for only admin accounts
 
@@ -49,7 +49,7 @@
 
 ## Frontend Steps:
 
-# Create the React App
+ Create the React App
 
 # Clean all files
 

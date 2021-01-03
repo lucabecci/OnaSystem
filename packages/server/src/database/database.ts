@@ -1,20 +1,19 @@
 import mongoose, { ConnectOptions, Mongoose } from "mongoose";
 
-
 class Database {
   private _mongoose: Mongoose;
   private _dbconfiguration: ConnectOptions;
-  private _db_uri: string
-  
+  private _db_uri: string;
+
   constructor(public db_uri: string) {
     this._mongoose = mongoose;
     this._dbconfiguration = {
       useNewUrlParser: true,
       useUnifiedTopology: true,
       useFindAndModify: false,
-      useCreateIndex: true
+      useCreateIndex: true,
     };
-    this._db_uri = db_uri
+    this._db_uri = db_uri;
   }
 
   public async getConnection(): Promise<void> {
@@ -34,5 +33,4 @@ class Database {
   }
 }
 
-
-export default Database
+export default Database;

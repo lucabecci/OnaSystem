@@ -1,17 +1,16 @@
-import {Response, Request} from 'express'
+import { Response, Request } from "express";
 
 class IndexController {
-    public getIndex(_req: Request, res: Response): Response{
-        return res.status(200).json({
-            ok: true,
-            message: 'Index api of ona backend.'
-        })
-    }
+  public getIndex(_req: Request, res: Response): Response {
+    return res.status(200).json({
+      ok: true,
+      message: "Index api of ona backend.",
+    });
+  }
 }
-
 
 export interface IIndexController {
-    getIndex: (_req: Request, res: Response) => Response
+  getIndex: (_req: Request, res: Response) => Response;
 }
 
-export default IndexController
+export default IndexController;

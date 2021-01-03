@@ -11,6 +11,7 @@ import IpRouter from './routes/ip.routes'
 import UserRouter from './routes/user.routes'
 import passportAuth from './middlewares/Auth'
 import SpeedRouter from './routes/speed.routes'
+import AdminRouter from './routes/admin.routes'
 class App {
     private _app: Application
     public _config: iConfig
@@ -19,6 +20,7 @@ class App {
     private _userRouter: UserRouter
     private _ipRouter: IpRouter
     private _speedRouter: SpeedRouter
+    private _adminRouter: AdminRouter
     constructor(){
         this._app = express()
         this._config = config
@@ -27,6 +29,7 @@ class App {
         this._userRouter = new UserRouter
         this._ipRouter = new IpRouter
         this._speedRouter = new SpeedRouter
+        this._adminRouter = new AdminRouter
 
         this.initDatabase()
         this.initConfig()
@@ -52,6 +55,7 @@ class App {
         this._app.use('/user', this._userRouter._router)
         this._app.use('/ip', this._ipRouter._router)
         this._app.use('/speed', this._speedRouter._router)
+        this._app.use('/admin', this._adminRouter._router)
     }
 
     public run(): void{
