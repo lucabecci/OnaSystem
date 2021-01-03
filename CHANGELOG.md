@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.8.0](https://github.com/lucabecci/OnaSystem/compare/v1.7.0...v1.8.0) (2021-01-03)
+
+
+### Features
+
+* **@server :** speed router, controller and schema added ([e6f468b](https://github.com/lucabecci/OnaSystem/commit/e6f468b06b0a3438b330211f9d6f8dc4f4d022d6))
+
+
+
+
+
 # [1.7.0](https://github.com/lucabecci/OnaSystem/compare/v1.6.1...v1.7.0) (2021-01-02)
 
 
