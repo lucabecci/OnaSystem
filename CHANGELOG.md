@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.9.0](https://github.com/lucabecci/OnaSystem/compare/v1.8.0...v1.9.0) (2021-01-03)
+
+
+### Features
+
+* **@server:** Admin controller, router and middleware added ([5d92908](https://github.com/lucabecci/OnaSystem/commit/5d92908cd864f7fab62ed63861dfd0477ea81cc2))
+
+
+
+
+
 # [1.8.0](https://github.com/lucabecci/OnaSystem/compare/v1.7.0...v1.8.0) (2021-01-03)
 
 
