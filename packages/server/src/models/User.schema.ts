@@ -8,7 +8,7 @@ export interface IUser extends Document {
   password: string;
   age: number;
   from: string;
-  isAdmin: boolean
+  isAdmin: boolean;
 }
 
 class UserSchema {
@@ -64,8 +64,8 @@ class UserSchema {
       },
       isAdmin: {
         type: Boolean,
-        default: false
-      }
+        default: false,
+      },
     }),
       (this._userSchema = new Schema(this._schemaDefinition, {
         timestamps: true,

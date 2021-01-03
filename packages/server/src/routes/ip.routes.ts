@@ -37,12 +37,12 @@ class IpRouter {
       passport.authenticate("jwt", { session: false }),
       this._ipController.deleteSearch
     );
-    
+
     this._router.delete(
-      '/delete',
+      "/delete",
       passport.authenticate("jwt", { session: false }),
       this._ipController.deleteAll
-    )
+    );
   }
 }
 

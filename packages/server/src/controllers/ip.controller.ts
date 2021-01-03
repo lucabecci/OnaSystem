@@ -124,31 +124,29 @@ class IpController {
   }
 
   public async deleteAll(req: Request, res: Response): Promise<Response> {
-    const ips: IIp[] = await Ip.find({userId: req.user})
+    const ips: IIp[] = await Ip.find({ userId: req.user });
 
-    if(ips.length < 1){
+    if (ips.length < 1) {
       return res.status(400).json({
         ok: false,
-        message: 'You dont have anything in your IP history'
-      })
+        message: "You dont have anything in your IP history",
+      });
     }
-    try{
+    try {
       ips.map(async (ip) => {
-        await Ip.findByIdAndDelete(ip._id)
-      })
+        await Ip.findByIdAndDelete(ip._id);
+      });
 
       return res.status(200).json({
         ok: true,
-        message: 'IP history deleted'
-      })
-    }
-    catch(e){
+        message: "IP history deleted",
+      });
+    } catch (e) {
       return res.status(500).json({
         ok: false,
-        message: 'Internal server error'
-      })
+        message: "Internal server error",
+      });
     }
-
   }
 }
 
