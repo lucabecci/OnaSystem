@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.12.0](https://github.com/lucabecci/OnaSystem/compare/v1.11.0...v1.12.0) (2021-01-04)
+
+
+### Features
+
+* **@web:** user ctx, protect routes and error handling added ([9ef1968](https://github.com/lucabecci/OnaSystem/commit/9ef196842a0a9f7c027e0f2008a0c8fc7e93073d))
+
+
+
+
+
 # [1.10.0](https://github.com/lucabecci/OnaSystem/compare/v1.9.0...v1.10.0) (2021-01-04)
 
 
