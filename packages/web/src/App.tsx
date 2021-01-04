@@ -12,22 +12,30 @@ import Register from './pages/Register';
 import Login from './pages/Login';
 import Admin from './pages/Admin';
 import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 function App(): ReactElement<any> {
+
+  const Background = styled.div`
+    background-color: white;
+  `
 
   return (
     <Fragment>
       <BrowserRouter>
-      <Navbar/>
-        <Switch>
-          <Route exact path='/' component={Home}/>
-          <Route path='/contact' component={Contact}/>
-          <Route path='/ip' component={Ip}/>
-          <Route path='/speed' component={Speed}/>
-          <Route path='/account' component={Account}/>
-          <Route path='/register' component={Register}/>
-          <Route path='/login' component={Login}/>
-          <Route path='/admin' component={Admin}/>
-        </Switch>
+        <Background>
+        <Navbar/>
+          <Switch>
+            <Route exact path='/' component={Home}/>
+            <Route path='/contact' component={Contact}/>
+            <Route path='/ip' component={Ip}/>
+            <Route path='/speed' component={Speed}/>
+            <Route path='/account' component={Account}/>
+            <Route path='/register' component={Register}/>
+            <Route path='/login' component={Login}/>
+            <Route path='/admin' component={Admin}/>
+          </Switch>
+          <Footer/>
+        </Background>
       </BrowserRouter>
     </Fragment>
   );
