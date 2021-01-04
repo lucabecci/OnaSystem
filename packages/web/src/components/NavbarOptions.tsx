@@ -1,15 +1,26 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useContext } from 'react'
 import {useHistory} from 'react-router-dom'
 import styled from '@emotion/styled'
+import UserContext from '../context/UserContext'
 
 function NavbarOptions(): React.FunctionComponentElement<HTMLAllCollection> {
 
     const history = useHistory()
+    const {userData, setUserData} = useContext(UserContext)
 
     const ipSearch = () => history.push('/ip')
     const speedConnection = () => history.push('/speed')
     const login = () => history.push('/login')
     const register = () => history.push('/register')
+    const logout = () => {
+        setUserData({
+            token: undefined,
+            user: undefined,
+            admin: false
+        })
+        localStorage.setItem('auth-token', '')
+        history.push('/')
+    }
 
     const LiLink = styled.li`
         list-style: none;
@@ -47,10 +58,17 @@ function NavbarOptions(): React.FunctionComponentElement<HTMLAllCollection> {
     `
     return (
         <Fragment>
-            <LiLink><ALinks onClick={()=> ipSearch()}>IP SEARCH</ALinks></LiLink>
-            <LiLink><ALinks onClick={()=> speedConnection()}>SPEED CONNECTION</ALinks></LiLink>
-            <LiLink><AVioletLinks onClick={()=> register()}>REGISTER</AVioletLinks></LiLink>
-            <LiLink><ALinks onClick={()=> login()}>LOGIN</ALinks></LiLink>
+            <LiLink><ALinks onClick={()=> ipSearch()}>IP-SEARCH</ALinks></LiLink>
+            <LiLink><ALinks onClick={()=> speedConnection()}>SPEED-CONNECTION</ALinks></LiLink>
+            {
+                userData.user ? 
+                <LiLink><AVioletLinks onClick={()=> logout()}>LOGOUT</AVioletLinks></LiLink>
+                :
+                <>
+                    <LiLink><AVioletLinks onClick={()=> register()}>REGISTER</AVioletLinks></LiLink>
+                    <LiLink><ALinks onClick={()=> login()}>LOGIN</ALinks></LiLink>
+                </>
+            }
         </Fragment>
     )
 }

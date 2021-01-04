@@ -5,7 +5,7 @@ import {
   LoginCampsCheck,
   RegisterCampsCheck,
 } from "../helpers/AuthChecks";
-import User from "../models/User.schema";
+import User, { IUser } from "../models/User.schema";
 import { createToken } from "../helpers/CreateToken";
 class UserController {
   public async register(req: Request, res: Response): Promise<Response> {
@@ -136,6 +136,25 @@ class UserController {
       console.log(e);
       return res.json(false);
     }
+  }
+
+  public async userInitialInformation(req: Request, res: Response): Promise<Response>{
+   try{
+      const user: IUser = await User.findById(req.user).select('-password')
+      return res.status(200).json({
+        ok: true,
+        id: user._id,
+        user: user,
+        admin: user.isAdmin
+      })
+   }
+   catch(e){
+     console.log(e)
+     return res.status(500).json({
+        ok: false,
+        message: 'Internal server error'
+     })
+   }
   }
 }
 
