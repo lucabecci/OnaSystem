@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.10.0](https://github.com/lucabecci/OnaSystem/compare/v1.9.0...v1.10.0) (2021-01-04)
+
+
+### Features
+
+* **@all:** backend finished and frontend started ([4eea36b](https://github.com/lucabecci/OnaSystem/commit/4eea36bc56c3e2e023ed7a350bc4d3f25ec6b7af))
+
+
+
+
+
 # [1.2.0](https://github.com/lucabecci/OnaSystem/compare/v1.1.0...v1.2.0) (2021-01-01)
 
 
