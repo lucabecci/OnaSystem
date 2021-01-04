@@ -22,6 +22,12 @@ class AdminRouter {
       IsAdmin,
       this._adminController.deleteUser
     );
+
+    this._router.put(
+      '/users/newAdmin/:id', 
+      IsAdmin, 
+      this._adminController.setAdmin
+      )
   }
 }
 

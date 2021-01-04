@@ -81,6 +81,45 @@ class AdminController {
       });
     }
   }
+
+  public async setAdmin(req: Request, res: Response): Promise<Response>{
+    try{
+      const userId: string = req.params.id
+      try{
+        const newAdmin: IUser = await User.findByIdAndUpdate(userId,{ isAdmin: true })
+                          .select("-password")
+
+        if(newAdmin.isAdmin === true){
+          return res.status(400).json({
+            ok: false,
+            message: `The user ${newAdmin.userName} is already an administrator`
+          })
+        }
+        if (!newAdmin) {
+          return res.status(400).json({
+            ok: false,
+            message: "The user doesnt exists",
+          });
+        }
+        return res.status(200).json({
+          ok: true,
+          message: `New admin added: ${newAdmin.userName}`
+        })
+      }
+      catch(e){
+        return res.status(400).json({
+          ok: false,
+          message: "The user doesnt exists",
+        });
+      }
+    }
+    catch(e){
+      return res.status(500).json({
+        ok: false,
+        message: 'Internal server error' 
+      })
+    }
+  }
 }
 
 export default AdminController;
