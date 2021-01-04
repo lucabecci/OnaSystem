@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.11.0](https://github.com/lucabecci/OnaSystem/compare/v1.10.0...v1.11.0) (2021-01-04)
+
+
+### Features
+
+* **@web:** navbar and footer responsive added in the frontend ([92ce354](https://github.com/lucabecci/OnaSystem/commit/92ce354b5068cd88314bea8d02bf9d96b4174f18))
+
+
+
+
+
 # [1.10.0](https://github.com/lucabecci/OnaSystem/compare/v1.9.0...v1.10.0) (2021-01-04)
 
 
