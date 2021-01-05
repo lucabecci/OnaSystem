@@ -14,6 +14,7 @@ import Footer from './components/Footer';
 import UserContext from './context/UserContext'
 import {IUserData} from './interfaces/UserInterfaces'
 import Error404 from './pages/Error404';
+import styled from '@emotion/styled';
 
 
 function App(): React.FunctionComponentElement<HTMLAllCollection> {
@@ -49,33 +50,38 @@ function App(): React.FunctionComponentElement<HTMLAllCollection> {
     checkLoggedIn()
   }, [])
 
+  const Background = styled.div`
+    background-color: #16161a;
+  `
 
   return (
     <Fragment>
       <BrowserRouter>
         <UserContext.Provider value={{userData, setUserData}}>
-          <Navbar/>
-            <Switch>
-              <Route exact path='/' component={Home}/>
-              <Route path='/ip' component={Ip}/>
-              <Route path='/speed' component={Speed}/>
-              {
-                userData.user ?
-                <Route path='/account' component={Account}/>
-                :
-                null
-              }
-              <Route path='/register' component={Register}/>
-              <Route path='/login' component={Login}/>
-              {
-                userData.admin ?
-                <Route path='/admin' component={Admin}/>
-                :
-                null
-              }
-              <Route component={Error404} />
-            </Switch>
-            <Footer/>
+          <Background>
+            <Navbar/>
+              <Switch>
+                <Route exact path='/' component={Home}/>
+                <Route path='/ip' component={Ip}/>
+                <Route path='/speed' component={Speed}/>
+                {
+                  userData.user ?
+                  <Route path='/account' component={Account}/>
+                  :
+                  null
+                }
+                <Route path='/register' component={Register}/>
+                <Route path='/login' component={Login}/>
+                {
+                  userData.admin ?
+                  <Route path='/admin' component={Admin}/>
+                  :
+                  null
+                }
+                <Route component={Error404} />
+              </Switch>
+              <Footer/>
+          </Background>
         </UserContext.Provider>
       </BrowserRouter>
     </Fragment>

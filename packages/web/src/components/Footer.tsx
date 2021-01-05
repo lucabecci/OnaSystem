@@ -43,7 +43,7 @@ function Footer(): React.FunctionComponentElement<HTMLAllCollection> {
     const ContainerParagraph = styled.div`
         margin: auto;
         height: 80%;
-        width: 60%;
+        width: 80%;
         @media (max-width: 800px) {
             height: 100%;
         }
@@ -62,7 +62,7 @@ function Footer(): React.FunctionComponentElement<HTMLAllCollection> {
     const ContainerLinks = styled.div`
         margin: auto 5px auto 5px;
         height: 80%;
-        width: 80%;
+        width: 70%;
         @media (max-width: 800px) {
             margin: auto;
         }
@@ -115,7 +115,7 @@ function Footer(): React.FunctionComponentElement<HTMLAllCollection> {
                     <ContainerInformation>
                         <InformationTitle>ONA SYSTEM</InformationTitle>
                         <ContainerParagraph>
-                            <InformationParagraph>This system was created with Luca Becci(fullstack developer. Argentina, Buenos Aires) for contact see the links in the footer. </InformationParagraph>
+                            <InformationParagraph>This system was created by Luca Becci(fullstack developer. Argentina, Buenos Aires) for contact use the links in the footer. </InformationParagraph>
                         </ContainerParagraph>
                     </ContainerInformation>
                     <ContainerLinks>

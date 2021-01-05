@@ -1,14 +1,11 @@
 import React, { Fragment, ReactElement } from 'react';
-import styled from '@emotion/styled'
+import FirstSectionHome from '../components/FirstSectionHome'
+import SecondSectionHome from '../components/SecondSectionHome';
 function Home(): ReactElement<HTMLAllCollection> {
-
-    const FirstTitle = styled.h2`
-        color: red;
-    `
-
   return (
     <Fragment>
-        <FirstTitle>Home</FirstTitle>
+        <FirstSectionHome/>
+        <SecondSectionHome/>
     </Fragment>
   );
 }
