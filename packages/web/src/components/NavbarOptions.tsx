@@ -34,8 +34,9 @@ function NavbarOptions(): React.FunctionComponentElement<HTMLAllCollection> {
         color: white;
         cursor: pointer;
         padding: 1rem;
+        transition: ease .8s;
         &:hover{
-            background-color: #3d3d47;
+            background-color: #7f5af0;
         }
         @media (max-width: 800px) {
             padding: .5rem 1rem;
@@ -49,8 +50,10 @@ function NavbarOptions(): React.FunctionComponentElement<HTMLAllCollection> {
     color: white;
     cursor: pointer;
     padding: 1rem;
+    transition: ease .8s;
     &:hover{
-        background-color: #6e59ac;
+        background-color: #fffffe;
+        color: #7f5af0;
     }
     @media (max-width: 800px) {
         padding: .5rem 1rem;

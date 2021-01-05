@@ -1,24 +1,41 @@
-import React, { Fragment, useContext } from 'react'
+import React, { Fragment, useContext, useState } from 'react'
 import styled from '@emotion/styled'
 import { useHistory } from 'react-router-dom'
 import UserContext from '../context/UserContext'
+import { keyframes } from '@emotion/react'
 function FirstSectionHome(): React.FunctionComponentElement<HTMLAllCollection> {
 
     const history = useHistory()
     const {userData} = useContext(UserContext)
-
     const startedNow = () => history.push('/register')
     const account = () => history.push('/account')
 
+    const Hop = keyframes`
+    from, 20%, 53%, 80%, to {
+        transform: translate3d(0,0,0);
+    }
+
+    40%, 43% {
+        transform: translate3d(0, -30px, 0);
+    }
+
+    70% {
+        transform: translate3d(0, -15px, 0);
+    }
+
+    90% {
+        transform: translate3d(0,-4px,0);
+    }
+    `
     const MainContainerSection = styled.div`
         background-color: #16161a;
         height: 400px;
         width: 100%;
         @media (max-width: 500px) {
-            height: 400px
+            height: 350px
         }
         @media (max-width: 960px) {
-            height: 600px
+            height: 500px
         }
     `
     const ItemsContainer = styled.div`
@@ -60,7 +77,6 @@ function FirstSectionHome(): React.FunctionComponentElement<HTMLAllCollection> {
     const ParagraphContainer = styled.div`
         width: 70%;
     `
-
     const ParagraphInformation = styled.p`
         color: #94a1b2;
         font-size: 18px;
@@ -86,25 +102,24 @@ function FirstSectionHome(): React.FunctionComponentElement<HTMLAllCollection> {
         width: 40%;
     `
     const ButtonStarted = styled.button`
-        background: #7f5af0;
-        border: none;
+        background: transparent;
+        border: 2px solid #7f5af0;
         border-radius: 5px;
         color: #fffffe;
         font-size: 15px;
-        padding: 20px;
+        font-weight: 700;
+        padding: 20px 35px 20px 35px;
         transition: ease .8s;
         &:hover{
-            background: #fffffe;
-            color: #7f5af0;
-            font-size: 18px;
-            padding: 25px;
+            background: #7f5af0;
+            color: #fffffe;
+            padding: 25px 40px 25px 40px;
         }
         @media (max-width: 500px) {
             padding: 15px;
         }
     `
     //img
-
     const ContainerImage = styled.div`
         height: 400px;
         width: 80%;
@@ -116,6 +131,9 @@ function FirstSectionHome(): React.FunctionComponentElement<HTMLAllCollection> {
         height: 75%;
         margin: 35px;
         width: 70%;
+        &:hover{
+            animation: ${Hop} 1.5s linear infinite;
+        }
         @media (max-width: 500px) {
             display: none;
         }
@@ -125,13 +143,14 @@ function FirstSectionHome(): React.FunctionComponentElement<HTMLAllCollection> {
             width: 70%;
         }
     `
+    
     return (
         <Fragment>
             <MainContainerSection>
                 <ItemsContainer>
                     <ContainerInformation>
                         <TitleInformation>
-                            WELCOME TO ONA SYSTEM
+                            Welcome to ONA SYSTEM
                         </TitleInformation>
                         <ParagraphMainContainer>
                             <ParagraphContainer>
