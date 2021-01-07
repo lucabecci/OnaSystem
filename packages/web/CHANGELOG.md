@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.15.0](https://github.com/lucabecci/OnaSystem/compare/v1.14.0...v1.15.0) (2021-01-07)
+
+
+### Features
+
+* **@web:** Second section of home responsive added ([6c69e7b](https://github.com/lucabecci/OnaSystem/commit/6c69e7bb9fd1e9d4c093d61cece83c01bb19f918))
+
+
+
+
+
 # [1.14.0](https://github.com/lucabecci/OnaSystem/compare/v1.13.0...v1.14.0) (2021-01-05)
 
 
