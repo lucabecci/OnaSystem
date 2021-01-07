@@ -16,17 +16,18 @@ function Footer(): React.FunctionComponentElement<HTMLAllCollection> {
         display: flex;
         justify-content: space-between;
         margin: auto;
-        height: 80%;
+        height: 120px;
         width: 80%;
         @media (max-width: 800px) {
             flex-direction: column;
+            height: 320px;
             width: 100%;
         }
     `
     //footer information
     const ContainerInformation = styled.div`
         margin: auto 5px auto 5px;
-        height: 80%;
+        height: 130px;
         width: 80%;
         @media (max-width: 800px) {
             margin: auto;
