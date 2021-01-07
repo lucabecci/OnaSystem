@@ -28,33 +28,40 @@ function TarjetInformation(props: TarjetProps): React.FunctionComponentElement<H
         }
     `
     const letterChange = keyframes`
-    from, 20%, 53%, 80%, to {
-        color: #7f5af0;
-    }
+        from, 20%, 53%, 80%, to {
+            color: #7f5af0;
+        }
 
-    40%, 43% {
-        color: #FFFFFe;
-    }
+        40%, 43% {
+            color: #FFFFFe;
+        }
 
-    70% {
-        color: #7f5af0;
-    }
+        70% {
+            color: #7f5af0;
+        }
 
-    90% {
-        color: #FFFFFe;
-    }
-`
+        90% {
+            color: #FFFFFe;
+        }
+    `
     
     const Background = styled.div`
         background-color: #16161A;
         border-radius: 10px;
         height: 300px;
         width: 45%;
+        @media (max-width: 800px) {
+            margin-bottom: 30px;
+            width: 100%;
+        }
     `
     const ContainerMainFirstInformation = styled.div`
         height: 80px;
         margin: 40px auto auto auto;
         width: 70%;
+        @media (max-width: 800px) {
+            width: 80%;
+        }
     `
     const ContainerFirstInformation = styled.div`
         display: flex;
@@ -72,6 +79,9 @@ function TarjetInformation(props: TarjetProps): React.FunctionComponentElement<H
         box-shadow: 0 15px 10px #18181a;
         width: 100px;
         animation: ${colorChange} 5s linear infinite;
+        @media (max-width: 1000px) {
+            height: 90px
+        }
     `
     const Letter = styled.div`
         color: #7f5af0;
@@ -85,12 +95,18 @@ function TarjetInformation(props: TarjetProps): React.FunctionComponentElement<H
         font-size: 30px;
         font-weight: 400;
         padding: 40px 20px;
+        @media (max-width: 1000px) {
+            font-size: 18px;
+        }
     `
     const Paragraph = styled.p`
         color: #94a1b2;
         letter-spacing: 1px;
         text-align: justify;
         word-spacing: 3px;
+        @media (max-width: 1000px) {
+            font-size: 13px;
+        }
     `
     
     return (

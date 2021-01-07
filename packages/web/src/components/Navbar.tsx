@@ -24,6 +24,7 @@ function Navbar(): React.FunctionComponentElement<HTMLAllCollection> {
     color: #fffffe;
     cursor: pointer;
     font-size: 1.5rem;
+    font-weight: 500;
     margin: .5rem;
    `
 

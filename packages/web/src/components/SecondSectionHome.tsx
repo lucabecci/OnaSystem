@@ -9,7 +9,7 @@ function SecondSectionHome(): React.FunctionComponentElement<HTMLAllCollection> 
         height: 600px;
         width: 100%;
         @media (max-width: 800px) {
-        height: 600px;
+        height: 1000px;
         }
     `
     const ContainerMainFirstInformation = styled.div`
@@ -35,7 +35,7 @@ function SecondSectionHome(): React.FunctionComponentElement<HTMLAllCollection> 
         font-weight: 400;
         word-spacing: 5px;
         text-align: center;
-        @media (max-width: 800px) {
+        @media (max-width: 1000px) {
             font-size: 18px;
         }
     `
@@ -43,7 +43,7 @@ function SecondSectionHome(): React.FunctionComponentElement<HTMLAllCollection> 
         margin: auto;
         padding-top: 20px;
         width: 50%;
-        @media (max-width: 800px) {
+        @media (max-width: 1000px) {
             width: 70%;
         }
     `
@@ -71,6 +71,9 @@ function SecondSectionHome(): React.FunctionComponentElement<HTMLAllCollection> 
     const ContainerSecondInformaation = styled.div`
         display: flex;
         justify-content: space-around;
+        @media (max-width: 800px) {
+            flex-direction:column;
+        }
     `
 
 

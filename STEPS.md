@@ -34,13 +34,13 @@
 
  Create the middleware of the authetication in the protected routes
 
-# Create the admin routes and controller
+ Create the admin routes and controller
 
  Protect all routes of the user with the auth middleware
 
-# Protect the admin routes for only admin accounts
+ Protect the admin routes for only admin accounts
 
-# Check if this API have problems in any endpoint
+ Check if this API have problems in any endpoint
 
 # Use tests in the endpoints
 
@@ -51,10 +51,10 @@
 
  Create the React App
 
-# Clean all files
+ Clean all files
 
-# Create the folders of components, pages, context, helpersand checks
+ Create the folders of components, pages, context, helpers and checks
 
-# Create the context for the user
+ Create the context for the user
 
 # ....

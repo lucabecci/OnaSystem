@@ -1,4 +1,4 @@
-import React, { Fragment, useContext, useState } from 'react'
+import React, { Fragment, useContext } from 'react'
 import styled from '@emotion/styled'
 import { useHistory } from 'react-router-dom'
 import UserContext from '../context/UserContext'
@@ -51,7 +51,7 @@ function FirstSectionHome(): React.FunctionComponentElement<HTMLAllCollection> {
         height: 200px;
         margin: 50px;
         width: 90%;
-        @media (max-width: 500px) {
+        @media (max-width: 1000px) {
             margin: 30px;
         }
     `
@@ -63,7 +63,7 @@ function FirstSectionHome(): React.FunctionComponentElement<HTMLAllCollection> {
         @media (max-width: 500px) {
             font-size: 25px;
         }
-        @media (max-width: 960px) {
+        @media (max-width: 1000px) {
             font-size: 25px
         }
     `
@@ -86,7 +86,7 @@ function FirstSectionHome(): React.FunctionComponentElement<HTMLAllCollection> {
             font-size: 13px;
             text-align: center;
         }
-        @media (max-width: 960px) {
+        @media (max-width: 1000px) {
             font-size: 17px;
             text-align: justify;
         }

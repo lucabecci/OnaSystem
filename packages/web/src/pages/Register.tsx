@@ -1,14 +1,19 @@
 import React, { Fragment, ReactElement } from 'react';
 import styled from '@emotion/styled'
+import FirstSectionRegister from '../components/FirstSectionRegister';
 function Register(): ReactElement<HTMLAllCollection> {
 
-    const FirstTitle = styled.h2`
-        color: red;
+    const Background = styled.div`
+        background-color: #16161A;
+        height: 500px;
+        width: 100%;
     `
 
   return (
     <Fragment>
-        <FirstTitle>Register</FirstTitle>
+        <Background>
+            <FirstSectionRegister/>
+        </Background>
     </Fragment>
   );
 }
