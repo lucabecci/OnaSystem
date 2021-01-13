@@ -15,3 +15,13 @@ export interface IUserData {
     updatedAt: string
     userName: string
   }
+
+  export interface IUserRegister{
+    email: string
+    firstName: string
+    lastName: string
+    userName: string
+    password: string
+    passwordCheck: string
+    age: string
+  }

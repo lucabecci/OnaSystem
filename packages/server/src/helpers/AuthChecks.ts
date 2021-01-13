@@ -5,8 +5,7 @@ export function RegisterCampsCheck(
   email: string,
   password: string,
   passwordCheck: string,
-  age: number,
-  from: string
+  age: number
 ): boolean {
   if (
     firstName == null ||
@@ -15,8 +14,7 @@ export function RegisterCampsCheck(
     email == null ||
     password == null ||
     passwordCheck == null ||
-    age == null ||
-    from == null
+    age == null
   ) {
     return true;
   }

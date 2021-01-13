@@ -16,8 +16,7 @@ class UserController {
       email: <string>req.body.email,
       password: <string>req.body.password,
       passwordCheck: <string>req.body.passwordCheck,
-      age: <number>req.body.age,
-      from: <string>req.body.from,
+      age: <number>req.body.age
     };
     const campsChecked = RegisterCampsCheck(
       newUser.firstName,
@@ -26,8 +25,7 @@ class UserController {
       newUser.email,
       newUser.password,
       newUser.passwordCheck,
-      newUser.age,
-      newUser.from
+      newUser.age
     );
 
     if (campsChecked) {

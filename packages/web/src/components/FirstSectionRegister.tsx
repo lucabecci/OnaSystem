@@ -4,13 +4,14 @@ function FirstSectionRegister() {
     const MainContainer = styled.div`
         display: flex;
         justify-content: center;
-        height: 250px;
+        height: 160px;
+        margin: auto;
         width: 100%;
     `
     const Container = styled.div`
         height: 160px;
         margin: auto;
-        width: 70%;
+        width: 50%;
         @media (max-width: 900px) {
             width: 90%;
         }
@@ -42,6 +43,7 @@ function FirstSectionRegister() {
         text-align: center;
         @media (max-width: 900px) {
             font-size: 16px;
+            text-align: justify;
         }
         @media (max-width: 1200px) {
             font-size: 16px;

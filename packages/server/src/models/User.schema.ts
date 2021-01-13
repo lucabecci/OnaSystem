@@ -7,7 +7,6 @@ export interface IUser extends Document {
   email: string;
   password: string;
   age: number;
-  from: string;
   isAdmin: boolean;
 }
 
@@ -55,12 +54,6 @@ class UserSchema {
       age: {
         type: Number,
         default: 18,
-      },
-      from: {
-        type: String,
-        minlength: 1,
-        required: true,
-        default: "Unselected",
       },
       isAdmin: {
         type: Boolean,
