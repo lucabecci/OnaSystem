@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.16.1](https://github.com/lucabecci/OnaSystem/compare/v1.16.0...v1.16.1) (2021-01-13)
+
+
+### Bug Fixes
+
+* **@web:** Alert unused in rRegister deleted ([82d68a1](https://github.com/lucabecci/OnaSystem/commit/82d68a1a962e30d4219598e25885ddc60a4efbae))
+
+
+
+
+
 # [1.16.0](https://github.com/lucabecci/OnaSystem/compare/v1.15.1...v1.16.0) (2021-01-13)
 
 
