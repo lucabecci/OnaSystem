@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.16.2](https://github.com/lucabecci/OnaSystem/compare/v1.16.1...v1.16.2) (2021-01-13)
+
+
+### Bug Fixes
+
+* **@web:** organized structure of folders and files ([8c84226](https://github.com/lucabecci/OnaSystem/commit/8c84226a49f861d2e1e0ab0242fa2717e996d6f5))
+
+
+
+
+
 ## [1.16.1](https://github.com/lucabecci/OnaSystem/compare/v1.16.0...v1.16.1) (2021-01-13)
 
 
