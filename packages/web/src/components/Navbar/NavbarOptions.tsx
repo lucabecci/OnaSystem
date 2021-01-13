@@ -1,7 +1,7 @@
 import React, { Fragment, useContext } from 'react'
 import {useHistory} from 'react-router-dom'
 import styled from '@emotion/styled'
-import UserContext from '../context/UserContext'
+import UserContext from '../../context/UserContext'
 
 function NavbarOptions(): React.FunctionComponentElement<HTMLAllCollection> {
 

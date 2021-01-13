@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react'
 import styled from '@emotion/styled'
-import TarjetInformation from './TarjetInformation'
+import TarjetInformation from '../TarjetInformation'
 
 function SecondSectionHome(): React.FunctionComponentElement<HTMLAllCollection> {
 

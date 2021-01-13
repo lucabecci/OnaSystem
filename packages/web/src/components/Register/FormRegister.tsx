@@ -2,9 +2,9 @@ import styled from '@emotion/styled';
 import React, { Fragment, useContext } from 'react'
 import { useForm } from "react-hook-form";
 import { useHistory } from 'react-router-dom';
-import UserContext from '../context/UserContext';
-import { IUserRegister } from '../interfaces/UserInterfaces';
-import { registerData } from '../services/UserServices';
+import UserContext from '../../context/UserContext';
+import { IUserRegister } from '../../interfaces/UserInterfaces';
+import { registerData } from '../../services/UserServices';
 
 interface Props {
   setError: any

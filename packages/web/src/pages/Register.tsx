@@ -1,7 +1,7 @@
 import React, { Fragment, ReactElement } from 'react';
 import styled from '@emotion/styled'
-import FirstSectionRegister from '../components/FirstSectionRegister';
-import SecondSectionRegister from '../components/SecondSectionRegister';
+import FirstSectionRegister from '../components/Register/FirstSectionRegister';
+import SecondSectionRegister from '../components/Register/SecondSectionRegister';
 function Register(): ReactElement<HTMLAllCollection> {
     const Background = styled.div`
         background-color: #16161A;

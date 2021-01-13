@@ -8,7 +8,7 @@ import Account from './pages/Account';
 import Register from './pages/Register';
 import Login from './pages/Login';
 import Admin from './pages/Admin';
-import Navbar from './components/Navbar';
+import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer';
 import UserContext from './context/UserContext'
 import {IUserData} from './interfaces/UserInterfaces'

@@ -1,6 +1,6 @@
 import React, { Fragment, ReactElement } from 'react';
-import FirstSectionHome from '../components/FirstSectionHome'
-import SecondSectionHome from '../components/SecondSectionHome';
+import FirstSectionHome from '../components/Home/FirstSectionHome'
+import SecondSectionHome from '../components/Home/SecondSectionHome';
 function Home(): ReactElement<HTMLAllCollection> {
   return (
     <Fragment>

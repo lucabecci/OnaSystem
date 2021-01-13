@@ -1,7 +1,7 @@
 import React, { Fragment, useContext } from 'react'
 import styled from '@emotion/styled'
 import { useHistory } from 'react-router-dom'
-import UserContext from '../context/UserContext'
+import UserContext from '../../context/UserContext'
 import { keyframes } from '@emotion/react'
 function FirstSectionHome(): React.FunctionComponentElement<HTMLAllCollection> {
 

@@ -1,7 +1,7 @@
 import React, { Fragment, useState } from 'react'
 import styled from '@emotion/styled'
 import FormRegister from './FormRegister'
-import Alert from './Alert'
+import Alert from '../Alert'
 
 function SecondSectionRegister() {
     const [err, setError] = useState({
