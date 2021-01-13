@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.16.0](https://github.com/lucabecci/OnaSystem/compare/v1.15.1...v1.16.0) (2021-01-13)
+
+
+### Features
+
+* **@web:** Register,  Register form  and Register logic added ([1f1e47a](https://github.com/lucabecci/OnaSystem/commit/1f1e47a099d9be33103c1b7994c0077d2e25628d))
+
+
+
+
+
 # [1.12.0](https://github.com/lucabecci/OnaSystem/compare/v1.11.0...v1.12.0) (2021-01-04)
 
 
