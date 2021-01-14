@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.17.0](https://github.com/lucabecci/OnaSystem/compare/v1.16.2...v1.17.0) (2021-01-14)
+
+
+### Features
+
+* **@web:** Login, Login form adn Login logic added ([90dfbf6](https://github.com/lucabecci/OnaSystem/commit/90dfbf634681a2fd11227ebb2a8fdcd04e190c57))
+
+
+
+
+
 ## [1.16.2](https://github.com/lucabecci/OnaSystem/compare/v1.16.1...v1.16.2) (2021-01-13)
 
 
