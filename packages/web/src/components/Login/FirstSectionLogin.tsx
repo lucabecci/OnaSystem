@@ -1,15 +1,13 @@
-import React, { Fragment } from 'react'
 import styled from '@emotion/styled'
-function FirstSectionRegister() {
+import React, { Fragment } from 'react'
+
+function FirstSectionLogin() {
     const MainContainer = styled.div`
         display: flex;
         justify-content: center;
-        height: 130px;
-        margin: auto;
+        height: 110px;
+        margin: 10px auto auto auto;
         width: 100%;
-        @media (max-width: 900px) {
-            height: 160px;
-        }
     `
     const Container = styled.div`
         height: 160px;
@@ -52,14 +50,13 @@ function FirstSectionRegister() {
             font-size: 16px;
         }
     `
-
     return (
         <Fragment>
-            <MainContainer>
+             <MainContainer>
                 <Container>
-                    <Title>REGISTER</Title>
+                    <Title>LOGIN</Title>
                     <ParagraphContainer>
-                        <Paragraph>Let's go! register to save all your ip searches and have information on all your speed tests</Paragraph>
+                        <Paragraph>Hello again! I hope you are enjoying ONA</Paragraph>
                     </ParagraphContainer>
                 </Container>
             </MainContainer>
@@ -67,4 +64,4 @@ function FirstSectionRegister() {
     )
 }
 
-export default FirstSectionRegister
+export default FirstSectionLogin

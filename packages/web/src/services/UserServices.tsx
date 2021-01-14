@@ -42,7 +42,6 @@ export async function checkLoggedIn(){
         }  
     }
 }
-
 export async function registerData(userData: IUserRegister){
     const campsChecked = checkCamps(
         userData.email,
@@ -106,7 +105,6 @@ export async function registerData(userData: IUserRegister){
         }
     }
 }
-
 export async function loginData(email: string, password: string){
     const campsChecked = checkCampsLogin(email, password)
     if(campsChecked){

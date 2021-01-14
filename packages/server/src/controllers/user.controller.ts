@@ -123,6 +123,7 @@ class UserController {
         id: user._id,
         userName: user.userName,
         email: user.email,
+        isAdmin: user.isAdmin
       },
     });
   }

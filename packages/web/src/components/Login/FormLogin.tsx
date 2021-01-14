@@ -1,19 +1,19 @@
 import styled from '@emotion/styled';
 import React, { Fragment, useContext } from 'react'
-import { useForm } from "react-hook-form";
 import { useHistory } from 'react-router-dom';
+import {useForm} from 'react-hook-form'
 import UserContext from '../../context/UserContext';
-import { IUserRegister } from '../../interfaces/UserInterfaces';
-import { registerData } from '../../services/UserServices';
+import { loginData } from '../../services/UserServices';
 
 interface Props {
-  setError: any
+    setError: any
 }
 
-function FormRegister(props: Props): React.FunctionComponentElement<HTMLAllCollection> {
+function FormLogin (props: Props): React.FunctionComponentElement<HTMLInputElement>{
+
     const {setUserData} = useContext(UserContext)
     const history = useHistory()
-    const { register, handleSubmit} = useForm<IUserRegister>();
+    const { register, handleSubmit} = useForm();
     //css components
     const Form = styled.form``
     const Container = styled.div`
@@ -63,18 +63,13 @@ function FormRegister(props: Props): React.FunctionComponentElement<HTMLAllColle
     `
 
     //functions
-      async function submitData(data: any){
+      async function submitDataLogin(data: any, e: any){
+        e.preventDefault()
         const userData = {
           email: data.email,
-          firstName: data.firstName,
-          lastName: data.lastName,
-          userName: data.userName,
           password: data.password,
-          passwordCheck: data.passwordCheck,
-          age: data.age
         }
-
-        const result = await registerData(userData)
+        const result = await loginData(userData.email, userData.password)
         if(result.error === true){
           props.setError({
             error: true,
@@ -84,7 +79,7 @@ function FormRegister(props: Props): React.FunctionComponentElement<HTMLAllColle
         }
         props.setError({
           error: false,
-          message: ''
+          message: result.message
         })
         setUserData({
           token: result.user.token,
@@ -93,11 +88,11 @@ function FormRegister(props: Props): React.FunctionComponentElement<HTMLAllColle
         })
         localStorage.setItem('auth-token', result.user.token)
         history.push('/')
+        return 
       }
-
     return (
         <Fragment>
-            <Form onSubmit={handleSubmit(submitData)}>
+            <Form onSubmit={handleSubmit(submitDataLogin)}>
               <Container>
                 <ContainerItems>
                   <Label>Email</Label>
@@ -110,70 +105,21 @@ function FormRegister(props: Props): React.FunctionComponentElement<HTMLAllColle
                   </ContainerInput>
                 </ContainerItems>
                 <ContainerItems>
-                  <Label>FirstName</Label>
-                  <ContainerInput>
-                    <Input
-                      type='text'
-                      name="firstName"
-                      ref={register({required: false})}
-                    />
-                  </ContainerInput>
-                </ContainerItems>
-                <ContainerItems>
-                  <Label>LastName</Label>
-                  <ContainerInput>
-                    <Input
-                      type='text'
-                      name="lastName"
-                      ref={register({required: false})}
-                    />
-                  </ContainerInput>
-                </ContainerItems>
-                <ContainerItems>
-                  <Label>Username</Label>
-                  <ContainerInput>
-                    <Input
-                      type='text'
-                      name="userName"
-                      ref={register({required: false})}
-                      />
-                  </ContainerInput>
-                </ContainerItems>
-                <ContainerItems>
                   <Label>Password</Label>
                   <ContainerInput>
                     <Input 
                       type='password' 
-                      placeholder='6 characters minimum'
                       name="password"
                       ref={register({required: false})}
                     />
                   </ContainerInput>
                 </ContainerItems>
                 <ContainerItems>
-                  <Label>Confirm Password</Label>
-                  <ContainerInput>
-                    <Input 
-                    type='password'
-                    name="passwordCheck"
-                    ref={register({required: false})}
-                    />
-                  </ContainerInput>
-                </ContainerItems>
-                <ContainerItems>
-                  <Label>Age</Label>
-                  <ContainerInput>
-                    <Input 
-                    type='number'
-                    name="age"
-                    ref={register({required: false})}
-                    />
-                  </ContainerInput>
-                  <ContainerButton>
-                    <Button
-                      type='submit'
-                    >REGISTER</Button>
-                  </ContainerButton>
+                    <ContainerButton>
+                        <Button
+                        type='submit'
+                        >LOGIN</Button>
+                    </ContainerButton>
                 </ContainerItems>
                 </Container>
             </Form>
@@ -181,4 +127,4 @@ function FormRegister(props: Props): React.FunctionComponentElement<HTMLAllColle
     )
 }
 
-export default FormRegister
+export default FormLogin
