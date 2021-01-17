@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.18.0](https://github.com/lucabecci/OnaSystem/compare/v1.17.0...v1.18.0) (2021-01-17)
+
+
+### Features
+
+* **@web:** IP section, interf and services for IP-Error added ([1b53856](https://github.com/lucabecci/OnaSystem/commit/1b53856ad7cb9addca751c292d1c197615beaa62))
+
+
+
+
+
 # [1.17.0](https://github.com/lucabecci/OnaSystem/compare/v1.16.2...v1.17.0) (2021-01-14)
 
 
