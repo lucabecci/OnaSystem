@@ -1,18 +1,36 @@
 import axios from "axios";
+import { IIPinformation } from "../interfaces/IPinterfaces";
 
 export async function searchIP(ip: string){
     try{
-        const result = await axios.get(`http://ip-api.com/json/${ip}`)
+        const result = await axios.get(`https://ipapi.co/190.174.89.14/json/`)
+        if(result.data.error){
+            return {
+                error: true,
+                message: 'invalid IP address',
+                data: null
+            }
+        }
+        const information: IIPinformation  = {
+            city: result.data.city,
+            country_name: result.data.country_name,
+            country_capital: result.data.country_capital,
+            continent_code: result.data.continent_code,
+            latitude: result.data.latitude,
+            longitude: result.data.longitude,
+            org: result.data.org,
+            postal: result.data.postal
+        }
         return {
-            error: true,
+            error: false,
             message: '',
-            data: result.data
+            data: information
         }
     }
     catch(e){
         return {
             error: true,
-            message: 'err',
+            message: 'Internal server error',
             data: null
         }
     }

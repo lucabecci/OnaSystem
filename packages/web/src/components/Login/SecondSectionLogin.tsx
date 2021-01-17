@@ -1,13 +1,11 @@
 import styled from '@emotion/styled'
 import React, { Fragment, useState } from 'react'
+import { IError } from '../../interfaces/ErrorInterface'
 import Alert from '../Alert'
 import FormLogin  from './FormLogin'
 
 function SecondSectionLogin() {
-    const [err, setError] = useState({
-        error: false,
-        message: ''
-    })
+    const [err, setError] = useState<IError>({} as IError)
     const MainContainer = styled.div`
         display: flex;
         justify-content: center;

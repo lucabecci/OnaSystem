@@ -1,14 +1,10 @@
 import React, { Fragment, ReactElement } from 'react';
-import styled from '@emotion/styled'
+import FirstSectionIp from '../components/IP/FirstSectionIp';
+
 function Ip(): ReactElement<HTMLAllCollection> {
-
-    const FirstTitle = styled.h2`
-        color: red;
-    `
-
   return (
     <Fragment>
-        <FirstTitle>Ip</FirstTitle>
+        <FirstSectionIp/>
     </Fragment>
   );
 }

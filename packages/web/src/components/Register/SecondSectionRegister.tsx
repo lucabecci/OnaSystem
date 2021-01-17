@@ -2,12 +2,10 @@ import React, { Fragment, useState } from 'react'
 import styled from '@emotion/styled'
 import FormRegister from './FormRegister'
 import Alert from '../Alert'
+import { IError } from '../../interfaces/ErrorInterface'
 
 function SecondSectionRegister() {
-    const [err, setError] = useState({
-        error: false,
-        message: ''
-    })
+    const [err, setError] = useState<IError>({} as IError)
     const MainContainer = styled.div`
         display: flex;
         justify-content: center;
