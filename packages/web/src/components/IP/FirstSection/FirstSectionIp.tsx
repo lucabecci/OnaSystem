@@ -1,21 +1,34 @@
 import styled from '@emotion/styled'
-import React, { Fragment } from 'react'
+import React, { Fragment,useState } from 'react'
+import MyIPComponent from './MyIPComponent'
 import SearchComponent from './SearchComponent'
 
+
 function FirstSectionIp(): React.FunctionComponentElement<HTMLAllCollection> {
+    const [service, setService] = useState<string>('find')
     const MainContainer = styled.div`
         height: 500px;
         width: 100%;
+        @media (max-width: 900px) {
+            height: 550px;
+        }
     `
     const ContainerItems = styled.div`
         height: 400px;
         margin: 20px auto auto auto;
         width: 60%;
+        @media (max-width: 900px) {
+            height: 550px;
+            width: 90%;
+        }
     `
     const ContainerInformation = styled.div`
         height: 150px;
         margin: auto;
         width: 90%;
+        @media (max-width: 900px) {
+            width: 100%;
+        }
     ` 
     const Title = styled.h3`
         color: #fffffe;
@@ -23,6 +36,9 @@ function FirstSectionIp(): React.FunctionComponentElement<HTMLAllCollection> {
         font-weight: 400;
         letter-spacing: 1px;
         text-align: center;
+        @media (max-width: 900px) {
+            font-size: 20px;
+        }
     `
     const ContainerButtons = styled.div`
         display: flex;
@@ -30,6 +46,9 @@ function FirstSectionIp(): React.FunctionComponentElement<HTMLAllCollection> {
         height: 50px;
         margin: 25px auto auto auto;
         width: 100%;
+        @media (max-width: 900px) {
+            justify-content: space-around;
+        }   
     `
     const Button = styled.button`
         background: transparent;
@@ -48,7 +67,6 @@ function FirstSectionIp(): React.FunctionComponentElement<HTMLAllCollection> {
             padding: 15px;
         }
     `
-
     return (
         <Fragment>
             <MainContainer>
@@ -56,11 +74,16 @@ function FirstSectionIp(): React.FunctionComponentElement<HTMLAllCollection> {
                     <ContainerInformation>
                         <Title>IP INFORMATION SYSTEM</Title>
                         <ContainerButtons>
-                            <Button>SEARCH ANY IP</Button>
-                            <Button>SEARCH MY IP</Button>
+                            <Button 
+                            onClick={() => setService('find')}>SEARCH ANY IP</Button>
+                            <Button onClick={() => setService('my')}>SEARCH MY IP</Button>
                         </ContainerButtons>
                     </ContainerInformation>
-                    <SearchComponent/>
+                    {
+                        service === 'find' ?
+                        <SearchComponent/>:
+                        <MyIPComponent/>
+                    }
                 </ContainerItems>               
             </MainContainer>
         </Fragment>

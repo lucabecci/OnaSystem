@@ -1,25 +1,53 @@
 import styled from '@emotion/styled'
-import React, { Fragment, useState } from 'react'
+import React, { Fragment, useContext, useState } from 'react'
 import { useForm } from 'react-hook-form';
-import { IIPinformation } from '../../interfaces/IPinterfaces';
-import { IError } from '../../interfaces/ErrorInterface';
-import { searchIP } from '../../services/IPServices';
-import Alert from '../Alert';
+import { IIPinformation } from '../../../interfaces/IPinterfaces';
+import { IError } from '../../../interfaces/ErrorInterface';
+import { saveInformationIP, searchIP } from '../../../services/IPServices';
+import Alert from '../../Alert';
+import { IpInformation } from './IpInformation';
+import { keyframes } from '@emotion/react';
+import UserContext from '../../../context/UserContext';
 
 function SearchComponent() {
     const [notSearch, setNotSearch] = useState<boolean>(true)
     const [information, setInformation] = useState<IIPinformation>({} as IIPinformation)
     const [err, setErr] = useState<IError>({} as IError)
+    const [errSave, setErrSave] = useState<IError>({} as IError)
     const {register, handleSubmit} = useForm();
+    const {userData} = useContext(UserContext)
+    const Hop = keyframes`
+    from, 20%, 53%, 80%, to {
+        transform: translate3d(-10px,0,0);
+    }
+
+    40%, 43% {
+        transform: translate3d(0, -30px, 0);
+    }
+
+    70% {
+        transform: translate3d(0, -15px, 0);
+    }
+
+    90% {
+        transform: translate3d(0,-4px,0);
+    }
+    `
     const Container = styled.div`
         height: 300px;
-        margin: auto;
+        margin: auto auto auto auto;
         width: 100%;
+        @media (max-width: 900px) {
+            height: 400px;
+        }   
     `
     const FormInputSearch = styled.form`
         display: flex;
         margin: auto;    
         width: 90%;
+        @media (max-width: 900px) {
+            width: 90%;
+        } 
     `
     const InputSearch = styled.input`
         font-size: 17px;
@@ -42,8 +70,9 @@ function SearchComponent() {
             color: #fffffe;
         }
         @media (max-width: 500px) {
-            padding: 15px;
+            padding: 10px 25px 10px 25px;
         }
+        
     `
     const ContainerSearchInformation = styled.div`
         background-color:#242629;
@@ -51,7 +80,7 @@ function SearchComponent() {
         display: flex;
         height: 250px;
         margin: auto;
-        width: 90%;
+        width: 90%;     
     ` 
     //Information ip
 
@@ -59,6 +88,7 @@ function SearchComponent() {
         height: 200px;
         margin: auto;
         width: 80%;
+        
     `
     const ContainerParagraph = styled.div`
         height: 50px;
@@ -71,12 +101,21 @@ function SearchComponent() {
         font-size: 20px;
         letter-spacing: 2px;
         text-align: center;
+        @media (max-width: 900px) {
+            font-size: 15px;
+        }  
     `
     const ContainerImage = styled.div`
         display: flex;
         height: 140px;
         margin: auto;
         width: 90%;
+        @media (max-width: 900px) {
+            margin: 10px auto auto auto;
+        }  
+        @media (max-width: 1300px) {
+            margin: 20px auto auto auto;
+        }  
     `
     const SubContainerImage = styled.div`
         display: flex;
@@ -90,11 +129,11 @@ function SearchComponent() {
         height: 120px;
         margin: auto;
         width: 150px;
+        animation: ${Hop} 1.5s linear;
     `
     //functions
 
     async function getIPaddress(data: any, e: any){
-        console.log(data)
         const result = await searchIP(data.ip)
         if(result.error){
             setErr({
@@ -103,8 +142,32 @@ function SearchComponent() {
             })
             return
         }
+        if(userData.user){
+            const dataToSend = {
+                ip: data.ip,
+                country: result.data?.country_name,
+                country_capital: result.data?.country_capital,
+                city: result.data?.city,
+                lat: result.data?.latitude,
+                lon: result.data?.longitude,
+                postal: result.data?.postal,
+                org: result.data?.org
+            }
+            const resultToSave = await saveInformationIP(dataToSend, userData.token)
+            if(resultToSave.error){
+                setErrSave({
+                    error: true,
+                    message: resultToSave.message
+                })
+            }
+        }     
         setInformation(result.data!)
         setNotSearch(false)
+        setErr({
+            error: false,
+            message: ''
+        })
+        return
     }
     information as any
     return (
@@ -112,6 +175,11 @@ function SearchComponent() {
             <Container>
                 {err.error ?
                 <Alert message={err.message}/>
+                :
+                null    
+            }
+            {errSave.error ?
+                <Alert message={errSave.message}/>
                 :
                 null    
             }
@@ -140,7 +208,7 @@ function SearchComponent() {
                         </ContainerImage>
                     </ContainerInformation> 
                     :
-                    null
+                    <IpInformation data={information}/>
                 }
                 </ContainerSearchInformation>
             </Container>

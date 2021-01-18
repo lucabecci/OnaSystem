@@ -1,7 +1,10 @@
+import { IIPinformation } from "./IPinterfaces";
+
 export interface IUserData {
     token: string | undefined
     user: undefined | IUser
-    admin: boolean
+    admin: boolean,
+    ipData: IIPinformation | null
   }
   
   export interface IUser{

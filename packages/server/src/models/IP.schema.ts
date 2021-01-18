@@ -5,10 +5,11 @@ export interface IIp extends Document {
   _id?: string;
   ip: string;
   country: string;
+  country_capital: string;
   city: string;
   lat: string;
   lon: string;
-  isp: string;
+  postal: string;
   org: string;
   userId: string;
 }
@@ -28,6 +29,10 @@ class IpSchema {
         type: String,
         required: true,
       },
+      country_capital: {
+        type: String,
+        required: true,
+      },
       city: {
         type: String,
         required: true,
@@ -42,7 +47,7 @@ class IpSchema {
         required: true,
         trim: true,
       },
-      isp: {
+      postal: {
         type: String,
         required: true,
       },

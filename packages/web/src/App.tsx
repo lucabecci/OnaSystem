@@ -15,6 +15,8 @@ import {IUserData} from './interfaces/UserInterfaces'
 import Error404 from './pages/Error404';
 import styled from '@emotion/styled';
 import { checkLoggedIn } from './services/UserServices';
+import { IIPinformation } from './interfaces/IPinterfaces';
+import { getUserIP } from './services/IPServices';
 
 
 function App(): React.FunctionComponentElement<HTMLAllCollection> {
@@ -22,11 +24,14 @@ function App(): React.FunctionComponentElement<HTMLAllCollection> {
   const [userData, setUserData] = useState<IUserData>({} as IUserData)
   useEffect(() => {
     async function getData(){
-      const user: IUserData = await checkLoggedIn()
+      const user = await checkLoggedIn()
+      const resIP = await getUserIP()
+      const ipData: IIPinformation | null = resIP.data
       setUserData({
         token: user.token,
         user: user.user,
-        admin: user.admin
+        admin: user.admin,
+        ipData
       })
     }
     getData()

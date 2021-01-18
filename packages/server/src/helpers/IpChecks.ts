@@ -1,6 +1,7 @@
 export function SaveIpCheckCamps(
   ip: string,
   country: string,
+  country_capital: string,
   city: string,
   lat: string,
   lon: string,
@@ -11,6 +12,7 @@ export function SaveIpCheckCamps(
   if (
     ip == null ||
     country == null ||
+    country_capital == null ||
     city == null ||
     lat == null ||
     lon == null ||

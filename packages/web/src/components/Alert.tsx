@@ -11,7 +11,7 @@ function Alert(props: Props) {
         background-color: white;
         border-radius: 3px;
         height: 30px;
-        margin: auto;
+        margin: 20px auto 20px auto;
         width: 30%;
         @media (max-width: 900px) {
             width: 70%;

@@ -1,9 +1,9 @@
 import axios from "axios";
-import { IIPinformation } from "../interfaces/IPinterfaces";
+import { IIPinformation, IIPtoSave } from "../interfaces/IPinterfaces";
 
 export async function searchIP(ip: string){
     try{
-        const result = await axios.get(`https://ipapi.co/190.174.89.14/json/`)
+        const result = await axios.get(`https://ipapi.co/${ip}/json/`)
         if(result.data.error){
             return {
                 error: true,
@@ -35,35 +35,24 @@ export async function searchIP(ip: string){
         }
     }
 }
-export async function searchIPLogged(ip: string, token: string){
+export async function getUserIP(){
     try{
-        const result = await axios.get(`http://ip-api.com/json/${ip}`)
-        const saveResult = await saveInformationIP(result.data, token)
-        if(saveResult.error === true){
-            return {
-                error: true,
-                message: saveResult.message,
-                data: null
-            }
-        }
-        return {
-            error: false,
-            message: '',
-            data: result.data
-        }
+        const res = await axios.get('https://api.ipify.org/?format=json')
+        const result = await searchIP(res.data.ip)
+        return result
     }
     catch(e){
         return {
             error: true,
-            message: 'err',
+            message: 'Internal server Error',
             data: null
         }
     }
 }
-
-export async function saveInformationIP(data: any, token: string){
+export async function saveInformationIP(data: IIPtoSave,token: string){
     try{
-        await axios.post('http://localhost:4000/ip/saveSearch', data, {
+        console.log(data)
+        await axios.post('http://localhost:4000/ip/create', data, {
             headers: {
                 Authorization: "Bearer " + token
             }
@@ -76,21 +65,30 @@ export async function saveInformationIP(data: any, token: string){
     catch(e){
         return {
             error: true,
-            message: e
+            message: 'Error to save your IP search'
         }
     }
 
 
 }
 
-export async function getAllIP(){
-    
-}
-
-export async function getBestIPS(){
-
-}
-
-export async function getBadIPS(){
-
+export async function getAllIP(token: string){
+    try{
+        const result = await axios.get('http://localhost:4000/ip/search', {
+            headers: {
+                Authorization: "Bearer " + token
+            }
+        })
+        return {
+            error: false,
+            message: '',
+            data: result.data.searchs
+        }
+    }
+    catch(e){
+        return {
+            error: true,
+            message: 'Error to get your IP searchs'
+        }
+    }
 }

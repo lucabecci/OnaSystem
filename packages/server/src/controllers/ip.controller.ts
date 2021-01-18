@@ -6,30 +6,38 @@ class IpController {
     const searchInformation = {
       ip: req.body.ip,
       country: req.body.country,
+      country_capital: req.body.country_capital,
       city: req.body.city,
       lat: req.body.lat,
       lon: req.body.lon,
-      isp: req.body.isp,
+      postal: req.body.postal,
       org: req.body.org,
       userId: req.user,
     };
     const campsChecked = SaveIpCheckCamps(
       searchInformation.ip,
       searchInformation.country,
+      searchInformation.country_capital,
       searchInformation.city,
       searchInformation.lat,
       searchInformation.lon,
-      searchInformation.isp,
+      searchInformation.postal,
       searchInformation.org,
       searchInformation.userId
     );
-
+    //check not more of 10 searchs
+    const searches: IIp[] = await Ip.find({userId: req.user}).sort({date: 'descending'})
+    if(searches.length >= 10){
+      const toDelete: IIp = searches[0]
+      await Ip.findByIdAndDelete({_id: toDelete._id})
+    }
     if (campsChecked) {
       return res.status(400).json({
         ok: false,
         message: "Please send all camps",
       });
     }
+    console.log(searches.length)
     const search: IIp = await new Ip(searchInformation);
 
     const searchSaved = await search.save();
@@ -41,7 +49,7 @@ class IpController {
   }
 
   public async getSearchs(req: Request, res: Response): Promise<Response> {
-    const searchs: IIp[] = await Ip.find({ userId: req.user });
+    const searchs: IIp[] = await Ip.find({ userId: req.user }).sort({createdAt: -1});
 
     if (searchs.length < 1) {
       return res.status(400).json({
@@ -146,6 +154,23 @@ class IpController {
         ok: false,
         message: "Internal server error",
       });
+    }
+  }
+
+  public getUserIP(req: Request, res: Response): Response{
+    try{
+      const ip: string|undefined = req.clientIp
+
+      return res.status(200).json({
+        ok: true,
+        user_ip: ip
+      })
+    }
+    catch(e){
+      return res.status(500).json({
+        ok: false,
+        message: 'Internal server error'
+      })
     }
   }
 }

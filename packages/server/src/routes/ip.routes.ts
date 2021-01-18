@@ -43,6 +43,11 @@ class IpRouter {
       passport.authenticate("jwt", { session: false }),
       this._ipController.deleteAll
     );
+    
+    this._router.get(
+      '/user-ip',
+      this._ipController.getUserIP
+    )
   }
 }
 
