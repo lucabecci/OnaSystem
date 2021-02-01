@@ -1,17 +1,13 @@
-import React, { Fragment, useEffect, useState } from 'react'
+import React, { Fragment } from 'react'
 import styled from '@emotion/styled'
-import { getAllIP } from '../../../services/IPServices'
 import { IIPinformationGet } from '../../../interfaces/IPinterfaces'
-function IPsearches() {
-    const [searches, setSearches] = useState<IIPinformationGet[]>([] as IIPinformationGet[])
 
-    useEffect(() => {
-        async function getData(){
-            const result = await getAllIP('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmZjIyZjliMzhkY2RmMzU4OTQxZDZlYyIsImlhdCI6MTYxMDk1NjE3M30.pRUgvMbkPMUby8uSlE0WJ8ZP7Zq-svrlgYuRrRJCoTA')
-            setSearches(result.data)
-        }
-        getData()
-    }, [])
+interface Props {
+    search: IIPinformationGet
+}
+
+function IPsearches(props: Props) {
+    
 
     const Table = styled.table`
         border: 2px solid #7f5af0;
@@ -25,7 +21,7 @@ function IPsearches() {
         border: 1px solid #7f5af0;
         color: #fffffe;
         font-size: 15px;
-        font-weight: 400;
+        font-weight: 300;
         @media (max-width: 900px) {
             font-size: 10px;
         }
@@ -34,7 +30,7 @@ function IPsearches() {
         border: 1px solid #7f5af0;
         color: #fffffe;
         font-size: 13px;
-        font-weight: 400;
+        font-weight: 300;
         @media (max-width: 900px) {
             font-size: 10px;
         }
@@ -43,26 +39,25 @@ function IPsearches() {
     return (
         <Fragment>
             <Table>
-                <Tr>
-                    <Th>IP</Th>
-                    <Th>LATITUDE</Th>
-                    <Th>LONGITUDE</Th>
-                    <Th>POSTAL</Th>
-                    <Th>COUNTRY NAME</Th>
-                    <Th>ORG</Th>
-                </Tr>
-                {
-                    searches.map((s: IIPinformationGet) => (
-                       <Tr key={s._id}>
-                            <Td>{s.ip}</Td>
-                            <Td>{s.lat}</Td>
-                            <Td>{s.lon}</Td>
-                            <Td>{s.postal}</Td>
-                            <Td>{s.country}</Td>
-                            <Td>{s.org}</Td>
-                       </Tr>
-                    ))
-                }
+                <thead>
+                    <Tr>
+                        <Th>IP</Th>
+                        <Th>LATITUDE</Th>
+                        <Th>LONGITUDE</Th>
+                        <Th>COUNTRY NAME</Th>
+                        <Th>ORG</Th>
+                    </Tr>
+                </thead>
+                    <tbody>
+                        <Tr>
+                            <Td>{props.search.ip}</Td>
+                            <Td>{props.search.lat}</Td>
+                            <Td>{props.search.lon}</Td>
+                            <Td>{props.search.country}</Td>
+                            <Td>{props.search.org}</Td> 
+                        </Tr>
+                    </tbody>
+                <tfoot></tfoot>
             </Table>
         </Fragment>
     )

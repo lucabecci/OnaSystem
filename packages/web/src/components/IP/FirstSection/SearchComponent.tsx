@@ -161,12 +161,12 @@ function SearchComponent() {
                 })
             }
         }     
-        setInformation(result.data!)
-        setNotSearch(false)
         setErr({
             error: false,
             message: ''
         })
+        setInformation(result.data!)
+        setNotSearch(false)
         return
     }
     information as any

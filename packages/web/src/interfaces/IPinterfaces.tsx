@@ -8,6 +8,9 @@ export interface IIPinformation {
     org: string
     postal: number
 }
+export interface IIpData {
+    searches: IIPinformationGet[]
+  }
 
 export interface IIPinformationGet {
     _id: string

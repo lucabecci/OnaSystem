@@ -27,7 +27,7 @@ class IpController {
     );
     //check not more of 10 searchs
     const searches: IIp[] = await Ip.find({userId: req.user}).sort({date: 'descending'})
-    if(searches.length >= 10){
+    if(searches.length >= 5){
       const toDelete: IIp = searches[0]
       await Ip.findByIdAndDelete({_id: toDelete._id})
     }
@@ -50,11 +50,10 @@ class IpController {
 
   public async getSearchs(req: Request, res: Response): Promise<Response> {
     const searchs: IIp[] = await Ip.find({ userId: req.user }).sort({createdAt: -1});
-
     if (searchs.length < 1) {
-      return res.status(400).json({
-        ok: false,
-        message: "You dont have searchs",
+      return res.status(200).json({
+        ok: true,
+        searchs : []
       });
     }
 

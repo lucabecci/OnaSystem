@@ -28,32 +28,39 @@ class IpSchema {
       country: {
         type: String,
         required: true,
+        default: 'unknown'
       },
       country_capital: {
         type: String,
         required: true,
+        default: 'unknown'
       },
       city: {
         type: String,
         required: true,
+        default: 'unknown'
       },
       lat: {
         type: String,
         required: true,
         trim: true,
+        default: 'none'
       },
       lon: {
         type: String,
         required: true,
         trim: true,
+        default: 'none'
       },
       postal: {
         type: String,
         required: true,
+        default: 0
       },
       org: {
         type: String,
         required: true,
+        default: 'none'
       },
       userId: {
         type: String,

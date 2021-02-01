@@ -9,8 +9,10 @@ function FirstSectionIp(): React.FunctionComponentElement<HTMLAllCollection> {
     const MainContainer = styled.div`
         height: 500px;
         width: 100%;
+        margin-bottom: 30px;
         @media (max-width: 900px) {
             height: 550px;
+            margin-bottom: 20px;
         }
     `
     const ContainerItems = styled.div`

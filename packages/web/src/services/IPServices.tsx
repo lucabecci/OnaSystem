@@ -51,7 +51,6 @@ export async function getUserIP(){
 }
 export async function saveInformationIP(data: IIPtoSave,token: string){
     try{
-        console.log(data)
         await axios.post('http://localhost:4000/ip/create', data, {
             headers: {
                 Authorization: "Bearer " + token
@@ -79,6 +78,13 @@ export async function getAllIP(token: string){
                 Authorization: "Bearer " + token
             }
         })
+        if(result.data.searchs.length < 1){
+            return {
+                error: false,
+                message: '',
+                data: []
+            }
+        }
         return {
             error: false,
             message: '',
