@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.19.1](https://github.com/lucabecci/OnaSystem/compare/v1.19.0...v1.19.1) (2021-02-01)
+
+
+### Bug Fixes
+
+* **@web:** Fix in second section IP component ([9bf49d1](https://github.com/lucabecci/OnaSystem/commit/9bf49d134008fc50e5f29f125fde53259bd2eae5))
+
+
+
+
+
 # [1.19.0](https://github.com/lucabecci/OnaSystem/compare/v1.18.0...v1.19.0) (2021-01-18)
 
 
