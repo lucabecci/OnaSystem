@@ -10,6 +10,7 @@ function SecondSectionIp() {
         if(userData.user){
         setHeightLogged(['400px', '500px'])
         }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
     const MainContainer = styled.div`
         background: #242629;
