@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.19.2](https://github.com/lucabecci/OnaSystem/compare/v1.19.1...v1.19.2) (2021-02-02)
+
+
+### Bug Fixes
+
+* **@web:** Error in the table ips solved ([c89af09](https://github.com/lucabecci/OnaSystem/commit/c89af0976bb392b41a356b1c7a0ae20600c2a25f))
+
+
+
+
+
 ## [1.19.1](https://github.com/lucabecci/OnaSystem/compare/v1.19.0...v1.19.1) (2021-02-01)
 
 
