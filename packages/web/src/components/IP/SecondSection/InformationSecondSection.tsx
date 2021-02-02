@@ -116,7 +116,7 @@ function InformationSecondSection(props: Props) {
         @media (max-width: 620px) {
             margin: 20px auto auto auto;
             height: 300px;
-            width: 80%;
+            width: 95%;
         }
     `
     const MainContainerReload = styled.div`
@@ -158,11 +158,8 @@ function InformationSecondSection(props: Props) {
                     </Container>
                     <ContainerTable>
                         {
-                           loaded ? (
-                            data.map((search: any) => 
-                                <IPsearches key={search._id} search={search}/>
-                            )
-                           ) : null
+                           loaded ? <IPsearches searchs={data}/>
+                            : null
                         }
                     </ContainerTable> 
                 </Fragment>
