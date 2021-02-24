@@ -15,6 +15,6 @@
     "test": "lerna run test --scope={@walnut/common,@walnut/server}",
     "new-version": "lerna version --conventional-commits --yes",
     "diff": "lerna diff",
-    "clean:code": "lerna run clean:code"
+    "pretty": "lerna run pretty"
   }
 }
