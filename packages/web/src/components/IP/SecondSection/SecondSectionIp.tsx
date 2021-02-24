@@ -1,17 +1,20 @@
-import styled from '@emotion/styled'
-import React, { Fragment, useContext, useEffect, useState } from 'react'
-import UserContext from '../../../context/UserContext'
-import InformationSecondSection from './InformationSecondSection'
+import styled from "@emotion/styled";
+import React, { Fragment, useContext, useEffect, useState } from "react";
+import UserContext from "../../../context/UserContext";
+import InformationSecondSection from "./InformationSecondSection";
 
 function SecondSectionIp() {
-    const [heightLogged, setHeightLogged] = useState<string[]>(['250px', '250px'])
-    const {userData} = useContext(UserContext)
+    const [heightLogged, setHeightLogged] = useState<string[]>([
+        "250px",
+        "250px",
+    ]);
+    const { userData } = useContext(UserContext);
     useEffect(() => {
-        if(userData.user){
-        setHeightLogged(['400px', '500px'])
+        if (userData.user) {
+            setHeightLogged(["400px", "500px"]);
         }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [])
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
     const MainContainer = styled.div`
         background: #242629;
         border-radius: 10px;
@@ -22,14 +25,14 @@ function SecondSectionIp() {
             height: ${heightLogged[1]};
             width: 100%;
         }
-    `
+    `;
     return (
         <Fragment>
             <MainContainer>
-                <InformationSecondSection logged = {userData.user}/>
+                <InformationSecondSection logged={userData.user} />
             </MainContainer>
         </Fragment>
-    )
+    );
 }
 
-export default SecondSectionIp
+export default SecondSectionIp;

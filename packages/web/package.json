@@ -26,7 +26,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "pretty": "npx prettier --write src/* && npx eslint --fix src/*"
+    "pretty": "npx prettier --write src/* && npx eslint --fix src/*.tsx"
   },
   "eslintConfig": {
     "extends": [

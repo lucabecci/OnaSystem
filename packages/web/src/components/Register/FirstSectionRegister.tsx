@@ -1,5 +1,5 @@
-import React, { Fragment } from 'react'
-import styled from '@emotion/styled'
+import React, { Fragment } from "react";
+import styled from "@emotion/styled";
 function FirstSectionRegister() {
     const MainContainer = styled.div`
         display: flex;
@@ -10,7 +10,7 @@ function FirstSectionRegister() {
         @media (max-width: 900px) {
             height: 160px;
         }
-    `
+    `;
     const Container = styled.div`
         height: 160px;
         margin: auto;
@@ -18,7 +18,7 @@ function FirstSectionRegister() {
         @media (max-width: 900px) {
             width: 90%;
         }
-    `
+    `;
     const Title = styled.h3`
         color: #94a1b2;
         font-size: 30px;
@@ -27,7 +27,7 @@ function FirstSectionRegister() {
         @media (max-width: 900px) {
             font-size: 25px;
         }
-    `
+    `;
     const ParagraphContainer = styled.div`
         height: 110px;
         margin: 10px auto auto auto;
@@ -36,9 +36,9 @@ function FirstSectionRegister() {
             width: 80%;
         }
         @media (max-width: 1200px) {
-            width: 70%
+            width: 70%;
         }
-    `
+    `;
     const Paragraph = styled.p`
         color: #94a1b2;
         font-size: 19px;
@@ -51,7 +51,7 @@ function FirstSectionRegister() {
         @media (max-width: 1200px) {
             font-size: 16px;
         }
-    `
+    `;
 
     return (
         <Fragment>
@@ -59,12 +59,15 @@ function FirstSectionRegister() {
                 <Container>
                     <Title>REGISTER</Title>
                     <ParagraphContainer>
-                        <Paragraph>Let's go! register to save all your ip searches and have information on all your speed tests</Paragraph>
+                        <Paragraph>
+                            Let's go! register to save all your ip searches and
+                            have information on all your speed tests
+                        </Paragraph>
                     </ParagraphContainer>
                 </Container>
             </MainContainer>
         </Fragment>
-    )
+    );
 }
 
-export default FirstSectionRegister
+export default FirstSectionRegister;

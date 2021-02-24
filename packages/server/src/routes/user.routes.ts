@@ -1,6 +1,6 @@
-import { IRouter, Router } from 'express';
-import passport from 'passport';
-import UserController from '../controllers/user.controller';
+import { IRouter, Router } from "express";
+import passport from "passport";
+import UserController from "../controllers/user.controller";
 
 class UserRouter {
     public _router: IRouter;
@@ -12,16 +12,16 @@ class UserRouter {
     }
 
     private initRoutes(): void {
-        this._router.post('/register', this._userController.register);
-        this._router.post('/login', this._userController.login);
+        this._router.post("/register", this._userController.register);
+        this._router.post("/login", this._userController.login);
         this._router.post(
-            '/tokenIsValid',
-            passport.authenticate('jwt', { session: false }),
+            "/tokenIsValid",
+            passport.authenticate("jwt", { session: false }),
             this._userController.tokenIsValid
         );
         this._router.get(
-            '/',
-            passport.authenticate('jwt', { session: false }),
+            "/",
+            passport.authenticate("jwt", { session: false }),
             this._userController.userInitialInformation
         );
     }

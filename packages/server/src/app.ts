@@ -1,19 +1,19 @@
-import express, { Application } from 'express';
-import morgan from 'morgan';
-import cors from 'cors';
-import helmet from 'helmet';
-import passport from 'passport';
-import requestIp from 'request-ip';
+import express, { Application } from "express";
+import morgan from "morgan";
+import cors from "cors";
+import helmet from "helmet";
+import passport from "passport";
+import requestIp from "request-ip";
 
-import config, { iConfig } from './config/config';
-import Database from './database/database';
-import IndexRouter from './routes/index.routes';
-import IpRouter from './routes/ip.routes';
-import UserRouter from './routes/user.routes';
-import passportAuth from './middlewares/Auth';
-import SpeedRouter from './routes/speed.routes';
-import AdminRouter from './routes/admin.routes';
-import IPmiddleware from './middlewares/IpMiddleware';
+import config, { iConfig } from "./config/config";
+import Database from "./database/database";
+import IndexRouter from "./routes/index.routes";
+import IpRouter from "./routes/ip.routes";
+import UserRouter from "./routes/user.routes";
+import passportAuth from "./middlewares/Auth";
+import SpeedRouter from "./routes/speed.routes";
+import AdminRouter from "./routes/admin.routes";
+import IPmiddleware from "./middlewares/IpMiddleware";
 class App {
     private _app: Application;
     public _config: iConfig;
@@ -55,16 +55,16 @@ class App {
     }
 
     private initRoutes(): void {
-        this._app.use('/', this._indexRouter._router);
-        this._app.use('/user', this._userRouter._router);
-        this._app.use('/ip', requestIp.mw(), this._ipRouter._router);
-        this._app.use('/speed', this._speedRouter._router);
-        this._app.use('/admin', this._adminRouter._router);
+        this._app.use("/", this._indexRouter._router);
+        this._app.use("/user", this._userRouter._router);
+        this._app.use("/ip", requestIp.mw(), this._ipRouter._router);
+        this._app.use("/speed", this._speedRouter._router);
+        this._app.use("/admin", this._adminRouter._router);
     }
 
     public run(): void {
         this._app.listen(this._config.PORT, () => {
-            console.log('Server on port:', this._config.PORT);
+            console.log("Server on port:", this._config.PORT);
         });
     }
 }

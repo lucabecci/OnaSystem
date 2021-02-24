@@ -1,15 +1,17 @@
-import React, { Fragment } from 'react'
-import styled from '@emotion/styled'
-import { keyframes } from '@emotion/react'
+import React, { Fragment } from "react";
+import styled from "@emotion/styled";
+import { keyframes } from "@emotion/react";
 
-interface TarjetProps{
-    letter: string
-    title: string
-    information: string
-    image: string
+interface TarjetProps {
+    letter: string;
+    title: string;
+    information: string;
+    image: string;
 }
 
-function TarjetInformation(props: TarjetProps): React.FunctionComponentElement<HTMLAllCollection> {
+function TarjetInformation(
+    props: TarjetProps
+): React.FunctionComponentElement<HTMLAllCollection> {
     const colorChange = keyframes`
         from, 20%, 53%, 80%, to {
             border: 2px solid #7f5af0;
@@ -26,7 +28,7 @@ function TarjetInformation(props: TarjetProps): React.FunctionComponentElement<H
         90% {
             border: 2px solid #FFFFFe;
         }
-    `
+    `;
     const letterChange = keyframes`
         from, 20%, 53%, 80%, to {
             color: #7f5af0;
@@ -43,10 +45,10 @@ function TarjetInformation(props: TarjetProps): React.FunctionComponentElement<H
         90% {
             color: #FFFFFe;
         }
-    `
-    
+    `;
+
     const Background = styled.div`
-        background-color: #16161A;
+        background-color: #16161a;
         border-radius: 10px;
         height: 300px;
         width: 45%;
@@ -54,7 +56,7 @@ function TarjetInformation(props: TarjetProps): React.FunctionComponentElement<H
             margin-bottom: 30px;
             width: 100%;
         }
-    `
+    `;
     const ContainerMainFirstInformation = styled.div`
         height: 80px;
         margin: 40px auto auto auto;
@@ -62,16 +64,16 @@ function TarjetInformation(props: TarjetProps): React.FunctionComponentElement<H
         @media (max-width: 800px) {
             width: 80%;
         }
-    `
+    `;
     const ContainerFirstInformation = styled.div`
         display: flex;
         height: 80px;
         margin: 40px auto 40px auto;
         width: 100%;
-    `
+    `;
 
     const Logo = styled.div`
-        background-color: #16161A;
+        background-color: #16161a;
         border: 2px solid #7f5af0;
         border-radius: 10px;
         display: flex;
@@ -80,25 +82,25 @@ function TarjetInformation(props: TarjetProps): React.FunctionComponentElement<H
         width: 100px;
         animation: ${colorChange} 5s linear infinite;
         @media (max-width: 1000px) {
-            height: 90px
+            height: 90px;
         }
-    `
+    `;
     const Letter = styled.div`
         color: #7f5af0;
         font-size: 40px;
         font-weight: 700;
         margin: auto;
         animation: ${letterChange} 5s linear infinite;
-    `
+    `;
     const Title = styled.h3`
-        color: #FFFFFe;
+        color: #fffffe;
         font-size: 30px;
         font-weight: 400;
         padding: 40px 20px;
         @media (max-width: 1000px) {
             font-size: 18px;
         }
-    `
+    `;
     const Paragraph = styled.p`
         color: #94a1b2;
         letter-spacing: 1px;
@@ -107,27 +109,23 @@ function TarjetInformation(props: TarjetProps): React.FunctionComponentElement<H
         @media (max-width: 1000px) {
             font-size: 13px;
         }
-    `
-    
+    `;
+
     return (
         <Fragment>
             <Background>
                 <ContainerMainFirstInformation>
-                   <ContainerFirstInformation>
+                    <ContainerFirstInformation>
                         <Logo>
-                            <Letter>
-                                {props.letter}
-                            </Letter>
+                            <Letter>{props.letter}</Letter>
                         </Logo>
                         <Title>{props.title}</Title>
-                   </ContainerFirstInformation>
-                   <Paragraph>
-                       {props.information}
-                   </Paragraph>
+                    </ContainerFirstInformation>
+                    <Paragraph>{props.information}</Paragraph>
                 </ContainerMainFirstInformation>
             </Background>
         </Fragment>
-    )  
+    );
 }
 
-export default TarjetInformation
+export default TarjetInformation;

@@ -1,11 +1,11 @@
-import styled from '@emotion/styled'
-import React, { Fragment, useState } from 'react'
-import { IError } from '../../interfaces/ErrorInterface'
-import Alert from '../Alert'
-import FormLogin  from './FormLogin'
+import styled from "@emotion/styled";
+import React, { Fragment, useState } from "react";
+import { IError } from "../../interfaces/ErrorInterface";
+import Alert from "../Alert";
+import FormLogin from "./FormLogin";
 
 function SecondSectionLogin() {
-    const [err, setError] = useState<IError>({} as IError)
+    const [err, setError] = useState<IError>({} as IError);
     const MainContainer = styled.div`
         display: flex;
         justify-content: center;
@@ -14,7 +14,7 @@ function SecondSectionLogin() {
         @media (max-width: 900px) {
             height: 100px;
         }
-    `
+    `;
     const Container = styled.div`
         height: 100px;
         margin: auto;
@@ -23,17 +23,17 @@ function SecondSectionLogin() {
             width: 90%;
             height: 100px;
         }
-    `
+    `;
     return (
         <Fragment>
-            {err.error? <Alert message = {err.message}/> : null}
+            {err.error ? <Alert message={err.message} /> : null}
             <MainContainer>
                 <Container>
-                    <FormLogin setError={setError}/>
+                    <FormLogin setError={setError} />
                 </Container>
             </MainContainer>
         </Fragment>
-    )
+    );
 }
 
-export default SecondSectionLogin
+export default SecondSectionLogin;
